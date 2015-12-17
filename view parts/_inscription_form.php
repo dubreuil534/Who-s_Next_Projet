@@ -2,11 +2,9 @@
 require_once  '_defines.php';
 require_once 'view parts/_page_base.php';
 ?>
-<div id="main"></div>
-
+  <div id="main"></div>
+<?= 'Form_Inscription' ?>
 <?php
 require_once 'view parts/_footer.php';
-require_once 'view parts/_main_menu.php';
 ?>
 
-  <div> <?= SITE_NAME ?></div>

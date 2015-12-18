@@ -13,6 +13,6 @@ require_once 'view parts/_page_base.php';
 
 ?>
 
-  <div> <?= 'Accueil' ?></div>
+  <div> <?= $site_data[PAGE_ID] ?></div>
 
 <?php require_once 'view parts/_page_bottom.php'; ?>

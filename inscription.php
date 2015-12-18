@@ -10,5 +10,5 @@ require_once 'view parts/_page_base.php';
 
 
 
-<?= 'Inscription' ?>
+<?= $site_data[PAGE_ID] ?>
 <?php require_once 'view parts/_page_bottom.php'; ?>

@@ -22,3 +22,12 @@
 #main_menu li:active {
     background-color: blueviolet;
 }
+
+#header{
+    background-image: url("images/bricks2.png'");
+
+}
+
+#footer {
+    background-image: url("images/bricks2.png'");
+}

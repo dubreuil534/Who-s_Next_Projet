@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ComicsDB</title>
+    <title>Who's Next</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"/>
@@ -26,7 +26,8 @@
                 <a class="navbar-brand" href="index.php">Who's Next</a>
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Chat priver</a></li>
+                    <li><a href="#">Chat Priver</a></li>
+                    <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
@@ -35,7 +36,7 @@
 
                 <!-- Formulaire de  Login -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="signup.php">S'inscrire</a></li>
+                    <li><a href="inscription.php">S'inscrire</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" method="post" id="loginForm">
                     <div class="form-group">

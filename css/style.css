@@ -28,10 +28,57 @@
 
 }
 
-#footer {
-    background-image: url("images/bricks2.png'");
-}
+
 .container {
     width: 500px;
     height: 700px;
+}
+#footer {
+    background-color: black;
+    margin-top: 450px;
+    background-image: url("images/bricks2.png'");
+}
+
+/* unvisited link */
+a:link {
+    color: grey;
+}
+
+/* visited link */
+a:visited {
+    color: grey;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
+.subtitle {
+    color: white;
+}
+p {
+    color: grey;
+    text-align: center;
+    margin-top: 25px;
+}
+.contact {
+    display: inline-block;
+    text-align: left;
+    margin-left: 5%;
+
+}
+.Explorer {
+    display: inline-block;
+    text-align: left;
+    margin-left: 15%;
+}
+.media_Sociaux {
+    display: inline-block;
+    text-align: left;
+    margin-left: 25%;
 }

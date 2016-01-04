@@ -4,7 +4,7 @@ require_once 'data/_main_data.php';
 ?>
   <div id="main">
     <div class="container">
-      <h2>Forumlaire d'inscription</h2>
+      <h2>Formulaire d'inscription</h2>
       <div class="well">
         <strong>
           IMPORTANT !!

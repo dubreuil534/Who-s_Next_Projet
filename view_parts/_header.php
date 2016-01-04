@@ -28,6 +28,7 @@
                     <li><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Chat Priver</a></li>
                     <li><a href="#">Blog</a></li>
+                    <li><a href="#">Recherche Avancée</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>

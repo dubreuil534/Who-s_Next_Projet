@@ -1,5 +1,3 @@
-<?php  ?>
-
 <?php if(! $site_data[USER_IS_LOGGED]) {
     //Si l'utilisateur n'est pas connecté
     ?>

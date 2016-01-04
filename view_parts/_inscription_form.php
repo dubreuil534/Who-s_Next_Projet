@@ -1,6 +1,6 @@
 <?php
 require_once  '_defines.php';
-require_once 'view parts/_page_base.php';
+require_once 'data/_main_data.php';
 ?>
   <div id="main">
     <div class="container">
@@ -58,9 +58,5 @@ require_once 'view parts/_page_base.php';
 
 
   </div>
-<?= 'Form_Inscription' ?>
 
-<?php
-require_once 'view parts/_footer.php';
-?>
 

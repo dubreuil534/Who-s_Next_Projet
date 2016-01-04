@@ -31,3 +31,7 @@
 #footer {
     background-image: url("images/bricks2.png'");
 }
+.container {
+    width: 500px;
+    height: 700px;
+}

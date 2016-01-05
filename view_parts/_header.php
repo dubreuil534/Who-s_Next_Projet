@@ -28,12 +28,12 @@
                     <li><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Chat Priver</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Recherche Avancée</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
 
                 <!-- Formulaire de  Login -->
                 <ul class="nav navbar-nav navbar-right">
@@ -54,6 +54,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a id="errAuth" class="red" style="cursor:default" href="#"></a></li>
                 </ul>
+
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

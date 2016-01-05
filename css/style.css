@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 
 #main_menu {
     display: inline-block;
@@ -23,9 +27,8 @@
     background-color: blueviolet;
 }
 
-#header{
-    background-image: url("images/bricks2.png'");
-
+h1{
+    font-size: 350%;
 }
 
 
@@ -35,8 +38,7 @@
 }
 #footer {
     background-color: black;
-    margin-top: 450px;
-    background-image: url("images/bricks2.png'");
+    margin-top: 200px;
 }
 
 /* unvisited link */
@@ -93,7 +95,6 @@ form.form-search:before {
     width: 14px;
     height: 14px;
     content: "\e003";
-    font-family: 'Glyphicons Halflings';
     background-position: -48px 0;
     position: absolute;
     top:8px;
@@ -101,3 +102,166 @@ form.form-search:before {
     opacity: .5;
     z-index: 1000;
 }
+.col-sm-4{
+    width: 200px;
+    text-align: left;
+}
+h1 {
+    display: inline-block;
+}
+#espace {
+    height: 500px;
+}
+
+.definition{
+    text-align: center;
+    font-family: "Lucida Grande", Tahoma;
+    font-size: 20px;
+    font-weight: lighter;
+    font-variant: normal;
+    text-transform: uppercase;
+    color: #666666;
+    margin-top: 10px;
+    text-align: center!important;
+    letter-spacing: 0.3em;
+}
+#categories_droite{
+    float: right;
+}
+
+
+/* Slider CSS*/
+#slider-wrapper {
+    width: 375px;
+    height: 400px;
+    margin: 50px auto;
+    position: relative;
+    margin-bottom: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+.slide img {
+    width: 10%;
+    float: left;
+}
+
+#s1 {
+    padding: 6px;
+    background: #000000;
+    position: absolute;
+    left: 22%;
+    bottom: 100px;
+    margin-left: -36px;
+    border-radius: 20px;
+    opacity: 0.3;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#s2 {
+    padding: 6px;
+    background: #000000;
+    position: absolute;
+    left: 22%;
+    bottom: 100px;
+    margin-left: -12px;
+    border-radius: 20px;
+    opacity: 0.3;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#s3 {
+    padding: 6px;
+    background: #000000;
+    position: absolute;
+    left: 22%;
+    bottom: 100px;
+    margin-left: 12px;
+    border-radius: 20px;
+    opacity: 0.3;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#s4 {
+    padding: 6px;
+    background: #000000;
+    position: absolute;
+    left: 22%;
+    bottom: 100px;
+    margin-left: 36px;
+    border-radius: 20px;
+    opacity: 0.3;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#s1:hover,
+#s2:hover,
+#s3:hover,
+#s4:hover {
+    opacity: .50;
+}
+
+.inner-wrapper {
+    width: 940px;
+    height: 470px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
+.control {
+    display: none;
+}
+
+#Slide1:checked ~ .overflow-wrapper {
+    margin-left: 0%;
+}
+
+#Slide2:checked ~ .overflow-wrapper {
+    margin-left: -100%;
+}
+
+#Slide3:checked ~ .overflow-wrapper {
+    margin-left: -200%;
+}
+
+#Slide4:checked ~ .overflow-wrapper {
+    margin-left: -300%;
+}
+
+#Slide1:checked + #s1 {
+    opacity: 1;
+}
+
+#Slide2:checked + #s2 {
+    opacity: 1;
+}
+
+#Slide3:checked + #s3 {
+    opacity: 1;
+}
+
+#Slide4:checked + #s4 {
+    opacity: 1;
+}
+
+.overflow-wrapper {
+    width: 400%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+

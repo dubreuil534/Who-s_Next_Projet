@@ -21,6 +21,6 @@ require_once 'view_parts/_header.php';
   </form>
 </div>
 
-  <div> <?= $site_data[PAGE_ID] ?></div>
+ <!-- <div> <?/*= $site_data[PAGE_ID] */?></div>-->
 
 <?php require_once 'view_parts/_page_bottom.php'; ?>

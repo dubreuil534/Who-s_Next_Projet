@@ -2,14 +2,10 @@
 require_once  '_defines.php';
 require_once 'data/_main_data.php';
 $site_data[PAGE_ID] = 'Contact';
-require_once 'view parts/_page_base.php';
-
-
+require_once 'view_parts/_header.php';
 ?>
-<div id="main"></div>
+    <div id="main"></div>
+
 <?php
-
-?>
-
-<?= $site_data[PAGE_ID] ?>
-<?php require_once 'view parts/_page_bottom.php'; ?>
+require_once 'view_parts/_contact_form.php';
+require_once 'view_parts/_page_bottom.php'; ?>

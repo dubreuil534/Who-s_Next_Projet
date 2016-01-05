@@ -45,7 +45,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="Deconnecter.php"><?php echo !empty($_SESSION["user"])?"Deconnexion":"";?></a></li>
                     <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenu":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->Prenom." ".$user->Nom:"";?></strong></a></li>
-                    <li><a href="_inscription_form.php">S'inscrire</a></li>
+                    <li><a href="inscription.php">S'inscrire</a></li>
                 </ul>
                 <?php if(empty($_SESSION["user"])){ ?>
                     <form class="navbar-form navbar-right" method="post" id="loginForm" action="Connecter.php">

@@ -44,6 +44,10 @@ require_once 'data/_main_data.php';
           <label for="pwd">Password:</label>
           <input type="password" class="form-control" id="pwd" placeholder="Entrer un mot de passe">
         </div>
+        <div class="form-group">
+          <label for="pwd_confirm">Password Confirmation:</label>
+          <input type="password" class="form-control" id="pwd_confirm" placeholder="Confirmer votre mot de passe">
+        </div>
         <div class="checkbox">
           <label><input type="checkbox"> Souvenez-vous de moi</label>
         </div>

@@ -1,4 +1,4 @@
-
+<div class="container">
 <h2>Contactez-nous:</h2>
 <form role="form">
     <div class="form-group">
@@ -27,7 +27,7 @@
 
     <div class="form-group">
         <label for="message">Message:</label>
-        <input type="text" maxlength="2000" class="form-control" id="message" placeholder="Entrez votre message">
+        <textarea maxlength="1000" rows="8" class="form-control" id="message" placeholder="Entrez votre message"></textarea>
     </div>
 
 
@@ -38,3 +38,4 @@
     <button type="submit" class="btn btn-primary">Soumettre</button>
 </form>
 
+</div>

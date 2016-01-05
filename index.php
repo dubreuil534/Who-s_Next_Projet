@@ -14,7 +14,7 @@ require_once 'view_parts/_header.php';
   <form class="form-search form-inline">
     <div class="input-group">
       <input type="text" class="form-control search-query" placeholder="Search..." /> <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary"> Search</button>
+            <button type="submit" class="btn btn-primary"> Search </button>
             </span>
 
     </div>

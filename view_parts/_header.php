@@ -1,8 +1,13 @@
+<?php
+   session_start();
+   if(!empty($_SESSION["user"]))
+    $user=$_SESSION["user"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Who's Next</title>
+    <title> CHAT DOF </title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"/>
@@ -26,9 +31,9 @@
                 <a class="navbar-brand" href="index.php">Who's Next</a>
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Chat Priver</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="Tchat.php">Chat Priver</a></li>
+                    <li><a href="Blog.php">Blog</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,21 +41,27 @@
 
 
                 <!-- Formulaire de  Login -->
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="inscription.php">S'inscrire</a></li>
+                    <li><a href="Deconnecter.php"><?php echo !empty($_SESSION["user"])?"Deconnexion":"";?></a></li>
+                    <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenu":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->Prenom." ".$user->Nom:"";?></strong></a></li>
+                    <li><a href="_inscription_form.php">S'inscrire</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" method="post" id="loginForm">
-                    <div class="form-group">
-                        <input type="text" name="email" placeholder="Email"
-                               value="" class="form-control "/>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="pass" placeholder="Password"
-                               value=""
-                               class="form-control "/>
-                    </div>
-                    <button id="login_btn" type="submit" name="submit_login" class="btn btn-primary">Connexion</button>
-                </form>
+                <?php if(empty($_SESSION["user"])){ ?>
+                    <form class="navbar-form navbar-right" method="post" id="loginForm" action="Connecter.php">
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Email"
+                                   value="" class="form-control " />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="pass" placeholder="Password"
+                                   value=""
+                                   class="form-control " />
+                        </div>
+                        <button id="login_btn" type="submit" name="submit_login" class="btn btn-primary">Connexion</button>
+                    </form>
+                <?php } ?>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a id="errAuth" class="red" style="cursor:default" href="#"></a></li>
                 </ul>

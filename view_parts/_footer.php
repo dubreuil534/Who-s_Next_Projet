@@ -34,7 +34,7 @@
             <p>© Copyright Who's Next 2016. Tous droits réservés. Who's Next est une marque déposée. - Who's Next inc.
                 est une compagnie du P62 ISI Montreal .</p>
         </div>
-    <p><a href="#wrapper">Haut de page</a></p>
+    <p><a href="#menu">Haut de page</a></p>
 
 </div>
 

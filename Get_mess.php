@@ -43,7 +43,7 @@ while($rw=$stmt->fetch(PDO::FETCH_OBJ)){
 	if($rw->Emetteur==$user->Login){
 	?>
     <li class="in">
-                                                <img class="avatar" alt="" src="/demo/Photo/<?php echo $rw->phe; ?>" />
+                                                <img class="avatar" alt="" src="/tp_dof/Photo/<?php echo $rw->phe; ?>" />
                                                 <div class="message">
                                                     <span class="arrow"> </span>
                                                     <a href="javascript:;" class="name"> <?php echo $rw->prenome." ".$rw->nome; ?> </a>
@@ -54,7 +54,7 @@ while($rw=$stmt->fetch(PDO::FETCH_OBJ)){
 	 
 	 <?php }else{ ?>
      <li class="out">
-                                                <img class="avatar" alt="" src="/demo/Photo/<?php echo $rw->phe; ?>" />
+                                                <img class="avatar" alt="" src="/tp_dof/Photo/<?php echo $rw->phe; ?>" />
                                                 <div class="message">
                                                     <span class="arrow"> </span>
                                                     <a href="javascript:;" class="name"> <?php echo $rw->prenome." ".$rw->nome; ?> </a>

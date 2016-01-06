@@ -9,11 +9,13 @@
     <meta charset="UTF-8">
     <title> CHAT DOF </title>
     <!-- Latest compiled and minified CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="sss/sss.min.js"></script>
     <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
         jQuery(function($) {
             $('.slider').sss();
@@ -35,7 +37,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Barre de menu -->
-                <img class="navbar-brand" src="images/Logo_projet.gif" alt="Mountain View" style="width:50px;height:50px;"><
+                <img class="navbar-brand" src="images/Logo_projet.gif" alt="Mountain View" style="width:50px;height:50px;">
                 <a class="navbar-brand" href="index.php">Who's Next</a>
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
@@ -54,7 +56,38 @@
                     <li><a href="Deconnecter.php"><?php echo !empty($_SESSION["user"])?"Deconnexion":"";?></a></li>
                     <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenu":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->Prenom." ".$user->Nom:"";?></strong></a></li>
                     <li><a href="inscription.php">S'inscrire</a></li>
-                    <li><a href="profil.php">Mon profil</a></li>
+                    <li class="dropdown open">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profil <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <img class="navbar-brand" src="images/Logo_projet.gif" alt="Mountain View" style="width:50px;height:50px;">
+                            <li><a href="profil.php">Modifier le profil</a></li>
+                            <li><a href="#">Preference</a></li>
+                            <li><a href="#">Option général</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Sous menu</li>
+                            <li><a href="#">Se déconnecter</a></li>
+                        </ul>
+                    </li>
+                        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </ul>
                 <?php if(empty($_SESSION["user"])){ ?>
                     <form class="navbar-form navbar-right" method="post" id="loginForm" action="Connecter.php">

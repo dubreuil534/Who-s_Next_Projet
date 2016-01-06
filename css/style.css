@@ -1,3 +1,14 @@
+/*body {
+    text-align: center;
+}*/
+
+/*!*form[name="inscription"] *!.error {
+    background-color: coral;
+}*/
+
+.msg_error {
+    color: red;
+}
 
 #main_menu {
     display: inline-block;

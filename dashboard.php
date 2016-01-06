@@ -1,7 +1,7 @@
 <?php
 require_once  '_defines.php';
 require_once 'data/_main_data.php';
-$site_data[PAGE_ID] = 'Dashboard';
+$site_data[PAGE_ID] = 'Blogue';
 require_once 'view parts/_page_base.php';
 
 

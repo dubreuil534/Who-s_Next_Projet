@@ -1,7 +1,7 @@
 <?php
 require_once  '_defines.php';
 require_once 'data/_main_data.php';
-$site_data[PAGE_ID] = 'Contact';
+$site_data[PAGE_ID] = 'Contactez-nous';
 require_once 'view_parts/_header.php';
 ?>
     <div id="main"></div>

@@ -19,6 +19,7 @@
     <div class="form-group">
         <label for="sel1">Choisisez le sujet de votre demande:</label>
         <select class="form-control" id="sel1">
+            <option>Sujet de demande</option>
             <option>Problème de connexion</option>
             <option>Mon profil</option>
             <option>Messagerie instantanée</option>

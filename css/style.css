@@ -1,7 +1,3 @@
-/*body {
-    text-align: center;
-}*/
-
 
 #main_menu {
     display: inline-block;
@@ -29,6 +25,7 @@
 
 h1{
     font-size: 350%;
+    margin-left: 170px;
 }
 
 
@@ -38,6 +35,7 @@ h1{
 }
 #footer {
     background-color: black;
+    margin-top: 200px;
 }
 
 /* unvisited link */

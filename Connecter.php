@@ -1,5 +1,6 @@
 <?php
 include("Server_Conf.php");
+
 session_start();
 		try{
 			$cn=new PDO("mysql:host=".HOST_NAME.";dbname=".DATABASE_NAME,USER_NAME,PASSEWORD);
@@ -17,9 +18,9 @@ session_start();
 		$qt="UPDATE membre SET Statut=1 WHERE Email='".$_POST['email']."';";
 			$stm=$cn->prepare($qt);
 			$stm->execute();
-			header('Location:Tchat.php');
+			header('Location:/tp_dof/');
 				}else
-				header('Location:index.php');
+				header('Location:alerte.php');
 			
 		}catch(PDOException $ex){
 			$_SESSION['messcon']='<span style="color:red">Erreur : '.$ex->getMessage().'</span>';

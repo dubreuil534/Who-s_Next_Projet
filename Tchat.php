@@ -4,7 +4,7 @@ session_start();
 if(!empty($_SESSION["user"]))
 $user=$_SESSION["user"];
 else
-header("Location:index.php");
+header("Location:alerte.php");
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
         <meta charset="utf-8" />
-        <title>TCHAT | ICI ON TCHATE</title>
+        <title></title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -64,7 +64,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
     <audio controls  id="son" style="display: none">
-  <source src="/demo/beep.mp3" type="audio/mp3" />
+  <source src="/tp_dof/beep.mp3" type="audio/mp3" />
   Votre navigateur n'est pas compatible
 </audio>  
         <!-- Affiche le header des pages -->
@@ -159,7 +159,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									?>
                                     <li class="nav-item start ">
                                         <a href="dashboard_3.html" class="nav-link " id="<?php echo $rw->Login; ?>">
-                                            <i><img width="25" height="25" style="border-radius:50% !important" src="/tp_dof/photo/<?php
+                                            <i><img width="25" height="25" style="border-radius:50% !important" src="/tp_dof/Photo/<?php
 										$ch="";
 									if(!empty($_SESSION['user'])){
 										$p=$rw->Photo;

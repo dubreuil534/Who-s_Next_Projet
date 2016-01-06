@@ -1,5 +1,5 @@
 <h1>Le meilleur site de rencontre gratuit </h1>
-<p class="definition">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend, quam ut egestas condimentum, erat ligula malesuada libero,
-    non ornare lacus mi nec urna. Duis diam mi, egestas sed orci id, tincidunt pharetra nulla. In eget arcu dignissim, eleifend leo id, condimentum dui.
-    Nunc pellentesque mollis elit. Integer sed cursus eros. Curabitur non vestibulum orci. Cum sociis natoque penatibus et magnis dis parturient montes,
-    nascetur ridiculus mus. Nullam eu egestas turpis, bibendum congue tellus. Nullam commodo fermentum justo ut aliquam.</p>
+<p class="definition">Who's Next est un site de rencontre gratuit pour les célibataires qui désirent trouver l'amour, l'âme soeur ou créer de nouvelles amitiés.
+    Le fonctionnement est simple: vous créez votre profil, puis vous avez maintenant accès aux célibataires avec qui vous pouvez avoir une affinité amoureuse ou amicale.
+    Si vous êtes une personne qui cherche le véritable amour de sa vie, la drague ou bien une simple amitié. Ce site s'adresse
+    à vous. N'oubliez pas que ce site de rencontre est vraiment 100% gratuit, donc vous n'avez rien à perdre!.</p>

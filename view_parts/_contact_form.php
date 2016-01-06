@@ -2,8 +2,13 @@
 <h2>Contactez-nous:</h2>
 <form role="form">
     <div class="form-group">
-        <label for="pseudonyme">Pseudonyme:</label>
-        <input type="text" class="form-control" id="pseudonyme" placeholder="Entrer un pseudonyme">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" id="prenom" placeholder="Entrer votre prénom">
+    </div>
+
+    <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" class="form-control" id="nom" placeholder="Entrer votre nom">
     </div>
 
     <div class="form-group">

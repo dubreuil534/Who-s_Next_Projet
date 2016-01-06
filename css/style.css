@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 
 #main_menu {
     display: inline-block;
@@ -23,9 +27,8 @@
     background-color: blueviolet;
 }
 
-#header{
-    background-image: url("images/bricks2.png'");
-
+h1{
+    font-size: 350%;
 }
 
 
@@ -35,8 +38,7 @@
 }
 #footer {
     background-color: black;
-    margin-top: 450px;
-    background-image: url("images/bricks2.png'");
+    margin-top: 420px;
 }
 
 /* unvisited link */
@@ -93,11 +95,40 @@ form.form-search:before {
     width: 14px;
     height: 14px;
     content: "\e003";
-    font-family: 'Glyphicons Halflings';
     background-position: -48px 0;
     position: absolute;
     top:8px;
     left:8px;
     opacity: .5;
     z-index: 1000;
+}
+.col-sm-4{
+    width: 200px;
+    text-align: left;
+}
+h1 {
+    display: inline-block;
+}
+#espace {
+    height: 500px;
+}
+
+.definition{
+    text-align: center;
+    font-family: "Lucida Grande", Tahoma;
+    font-size: 20px;
+    font-weight: lighter;
+    font-variant: normal;
+    text-transform: uppercase;
+    color: #666666;
+    margin-top: 10px;
+    text-align: center!important;
+    letter-spacing: 0.3em;
+}
+#categories_droite{
+    float: right;
+}
+img {
+    width: 50px;
+    height: 600px;
 }

@@ -65,7 +65,7 @@
                             <li><a href="#">Option général</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Sous menu</li>
-                            <li><a href="#">Se déconnecter</a></li>
+                            <li><a href="#">Sedéconnecter</a></li>
                         </ul>
                     </li>
                         </ul>

@@ -1,5 +1,5 @@
 <div class="slider">
-    <img src="images/User1.jpg" />
-    <img src="images/User2.jpg" />
-    <img src="images/User3.jpg" />
+    <img src="images/slider_image2.jpg" />
+    <img src="images/slider_image3.jpg" />
+    <img src="images/slider_image4.jpg" />
 </div>

@@ -159,7 +159,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									?>
                                     <li class="nav-item start ">
                                         <a href="dashboard_3.html" class="nav-link " id="<?php echo $rw->Login; ?>">
-                                            <i><img width="25" height="25" style="border-radius:50% !important" src="/demo/Photo/<?php
+                                            <i><img width="25" height="25" style="border-radius:50% !important" src="/tp_dof/photo/<?php
 										$ch="";
 									if(!empty($_SESSION['user'])){
 										$p=$rw->Photo;

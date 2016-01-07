@@ -2,7 +2,7 @@
 if(!empty($_SESSION["user"]))
     $user=$_SESSION["user"];
 else
-    header('Location: view_parts/alerte.php');
+    header('Location: alerte.php');
 
 ?>
 

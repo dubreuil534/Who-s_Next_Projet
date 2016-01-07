@@ -129,7 +129,6 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orien
                  placeholder="pseudo"/>
         <h6 class="msg_error"><?php echo $username_msg ?></h6>
           </div>
-          </div>
 
         <div class="form-group">
         <label for="courriel">* Email</label>

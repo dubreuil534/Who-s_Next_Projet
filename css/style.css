@@ -45,7 +45,7 @@ h1{
 }
 #footer {
     background-color: black;
-    margin-top: 40%;
+    margin-top: 43%;
 }
 
 /* unvisited link */
@@ -140,3 +140,8 @@ img {
     display: block;
     text-align: center;
 }
+.slider {
+    height: 100px;
+}
+
+

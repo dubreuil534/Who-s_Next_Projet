@@ -15,7 +15,7 @@ if (array_key_exists('username', $_POST)) {
   $username_ok = (1 === preg_match('/^[A-Za-z0-9]{2,}$/', $username));
 
   if (!$username_ok) {
-    $username_msg = 'Le nom ne doit contenir que des caractères alphabétiques et numériques (min 4)';
+    $username_msg = 'Attention !! Le nom ne doit contenir que des caractères alphabétiques et numériques (min 4)';
   }
 }
 
@@ -30,7 +30,7 @@ if (array_key_exists('courriel', $_POST)) {
 
   $courriel_ok = (false !== $courriel);
   if (!$courriel_ok) {
-    $courriel_msg = 'Courriel doit contenir un @ et se terminer pour un herbergeur de courriel valide.';
+    $courriel_msg = 'Attention !! Le courriel doit contenir un @ et se terminer pour un herbergeur de courriel valide.';
   }
 
 }
@@ -47,7 +47,7 @@ if (array_key_exists('age', $_POST)) {
 
   $age_ok = (1 === preg_match('/^[0-9]{2,3}$/', $age));
   if (!$age_ok) {
-    $age_msg = 'L\'age ne doit contenir que nombres (min 2, max 3)';
+    $age_msg = 'Attention !! L\'age ne doit contenir que nombres (min 2, max 3)';
   }
 
 }
@@ -62,7 +62,7 @@ if (array_key_exists('password', $_POST)) {
 
   $password_ok = (1 === preg_match('/^[A-Za-z0-9]{4,}$/', $password));
   if (!$password_ok) {
-    $password_msg = 'Le mot de passe ne doit contenir que des caractères alphabétiques et numériques (min 4)';
+    $password_msg = 'Attention !! Le mot de passe doit contenir que des caractères alphabétiques et numériques (min 4)';
   }
 
 
@@ -74,7 +74,7 @@ if (array_key_exists('password', $_POST)) {
 $orientation_msg='';
 $orientation_ok=false;
 if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orientation non_selectionee')){
-    $orientation_msg='Voullez selectioner votre orientation';
+    $orientation_msg='Veuillez selectioner votre orientation';
     $orientation_ok=false;
 }else {
     $orientation_msg='';

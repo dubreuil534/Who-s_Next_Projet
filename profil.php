@@ -1,4 +1,14 @@
 <?php
+include("Server_Conf.php");
+session_start();
+if(!empty($_SESSION["user"]))
+    $user=$_SESSION["user"];
+else
+    header("Location:alerte.php");
+
+?>
+
+<?php
 require_once  '_defines.php';
 require_once 'data/_main_data.php';
 $site_data[PAGE_ID] = 'Profil';

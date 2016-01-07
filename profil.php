@@ -1,4 +1,5 @@
 <?php
+include("Server_Conf.php");
 if(!empty($_SESSION["user"]))
     $user=$_SESSION["user"];
 else

@@ -1,6 +1,7 @@
 <?php
 require_once  '_defines.php';
 require_once 'data/_main_data.php';
+require_once "db/_user.php";
 
 //var_dump($_POST);
 $in_post = array_key_exists('register', $_POST);
@@ -92,9 +93,7 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 
 
 if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orientation_ok == true) {
-  // On enregistre les données et s'en vaa sur une autre page
-
-    $createuser = user_add($username_ok, $age_ok, $password_ok, $sex_ok, $orientation_ok);
+      $createuser = user_add($username_ok, $age_ok, $password_ok, $sex_ok, $orientation_ok);
     header( "refresh:5;url=profil.php" );
     echo '<div class="alert alert-success" role="alert">
         <strong>Well done!</strong> You successfully read this important alert message.

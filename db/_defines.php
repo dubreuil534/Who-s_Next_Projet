@@ -3,7 +3,7 @@
 define('PHPAT_DB_CONN_HOST', '127.0.0.1');
 define('PHPAT_DB_CONN_USER', 'root');
 define('PHPAT_DB_CONN_PWD', '');
-define('PHPAT_DB_DBNAME', 'phpat');
+define('PHPAT_DB_DBNAME', 'tp_dof');
 define('PHPAT_DB_TB_USER', 'user');
 define('PHPAT_DB_TB_USERCNX', 'user_cnx');
 define('COLON_CAR', ':');

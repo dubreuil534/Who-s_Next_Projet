@@ -93,11 +93,14 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 
 if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orientation_ok == true) {
   // On enregistre les données et s'en vaa sur une autre page
+
+    $createuser = user_add($username_ok, $age_ok, $password_ok, $sex_ok, $orientation_ok);
     header( "refresh:5;url=profil.php" );
     echo '<div class="alert alert-success" role="alert">
         <strong>Well done!</strong> You successfully read this important alert message.
       </div>';
 }
+
 
 
 ?>

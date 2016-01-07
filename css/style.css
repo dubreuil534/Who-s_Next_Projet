@@ -140,6 +140,11 @@ img {
     display: block;
     text-align: center;
 }
+
+.well {
+    color: grey;
+
+}
 .slider {
     height: 100px;
 }

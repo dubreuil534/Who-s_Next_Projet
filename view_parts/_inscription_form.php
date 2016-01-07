@@ -68,6 +68,15 @@ if (array_key_exists('password', $_POST)) {
 
 }
 //Validation GENRE
+$sex_msg='';
+$sex_ok=false;
+if  (array_key_exists('sex', $_POST) && ($_POST['sex'] =='sex_non_selectionee')){
+    $sex_msg='Voullez selectioner votre genre';
+    $sex_ok=false;
+}else {
+    $sex_msg='';
+    $sex_ok=true;
+}
 
 
 //Validation ORIENTATION
@@ -83,7 +92,7 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 
 
 //Formulaire est valide
-if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orientation_ok) {
+if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $sex_ok && $orientation_ok) {
   // On enregistre les données et s'en vaa sur une autre page
   /* header("Location: index.php");*/
   header("Location: profil.php");
@@ -98,18 +107,20 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orien
         <strong>
           IMPORTANT !!
         </strong>
-        <p><strong>Courriel:</strong> Doit contenir un @ et se terminer pour un herbergeur de courriel valide.<br>
-          <strong>Pseudonyme:</strong> Doit contenir doit etre different de votre prenom ou de votre nom.<br>
-          <strong>Mot de passe:</strong> Doit contenir au moin une majuscule et minimum de 8 caracteres.
+        <div>
+          <strong>Pseudonyme:</strong> Doit contenir des lettres et des nombres au minimum de 2 caracteres.<br>
+            <strong>Courriel:</strong> Doit contenir un @ et se terminer pour un herbergeur de courriel valide.<br>
+          <strong>Mot de passe:</strong> Doit contenir des lettres et des nombres au minimum de 4 caracteres.<br>
+            <span style="color: red; font-size: 8pt">* Les champs obligatoires</span>
 
 
-        </p>
+        </div>
       </div>
 
 
-      <form role="form" name="inscription" action="inscription.php" method="post">
+      <form role="form" name="inscription" action="#" method="post">
 
-        <span style="color: red">* Les champs obligatoires</span>
+
         <div class="form-group">
           <label for="username">* Pseudo</label>
           <input type="text" class="form-control" name="username"
@@ -142,20 +153,24 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orien
 
 
         <div class="form-group">
-          <label for="sel1">Sex:</label>
-          <select class="form-control" id="sel1">
-            <option >Homme</option>
-            <option >Femme</option>
+          <label for="sex">* Votre genre:</label>
+          <select class="form-control" id="sex" name="sex">
+              <option
+                  <?php echo (array_key_exists('sex',$_POST) && ($_POST['sex'] =='sex_non_selectionee')) ? ' selected="selected"' : '' ?>
+                  value="sex_non_selectionee" >Non  séléctionée</option>
+            <option
+                <?php echo (array_key_exists('sex',$_POST) && ($_POST['sex'] =='homme')) ? ' selected="selected"' : '' ?>
+                value="homme">Homme</option>
+            <option
+                <?php echo (array_key_exists('sex',$_POST) && ($_POST['sex'] =='femme')) ? ' selected="selected"' : '' ?>
+                value="femme">Femme</option>
           </select>
 
-          <!--<h6 class="msg_error"><?php /*echo $genre_msg */ ?></h6>-->
+          <h6 class="msg_error"><?php echo $sex_msg ?></h6>
 </div>
 
-        <span style="color: red"> Renseignements supplémentaires:
-        </span>
-
-        <div class="form-group">
-        <label for="orientation">Votre orientation sexuelle:</label>
+             <div class="form-group">
+        <label for="orientation">* Votre orientation sexuelle:</label>
           <select class="form-control" id="orientation" name="orientation">
             <option
                 <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] =='orientation non_selectionee')) ? ' selected="selected"' : '' ?>
@@ -212,7 +227,7 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orien
           <label><input type="checkbox"> Souvenez-vous de moi</label>
         </div>
 
-        <input type="submit" class="btn btn-primary" name="register" value="S'inscrire"/>
+        <input type="submit" class="btn btn-primary" name="register" value="Sumettre"/>
           <!--<input type="submit" class="btn btn-primary">Soumettre</input>-->
 
       </form>

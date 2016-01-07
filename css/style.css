@@ -143,8 +143,29 @@ img {
 
 .well {
     color: grey;
+}
+
+.profil_title {
+    font-weight: bold;
+}
+
+.profil_content {
+    color: grey;
+    font-size: 17pt;
+}
+
+.profil_select {
+    color: grey;
+    font-size: 13pt;
 
 }
+
+td {
+    height: 50px;
+    vertical-align: bottom;
+    padding-right: 10pt;
+}
+
 .slider {
     height: 100px;
 }

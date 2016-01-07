@@ -4,7 +4,7 @@ session_start();
 if(!empty($_SESSION["user"]))
 $user=$_SESSION["user"];
 else
-header("Location:alerte.php");
+header("Location:view_parts/alerte.php");
 
 ?>
 <!DOCTYPE html>

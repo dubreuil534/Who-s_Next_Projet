@@ -91,11 +91,12 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 }
 
 
-//Formulaire est valide
-if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $sex_ok && $orientation_ok) {
+if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orientation_ok == true) {
   // On enregistre les données et s'en vaa sur une autre page
-  /* header("Location: index.php");*/
-  header("Location: profil.php");
+    header( "refresh:5;url=profil.php" );
+    echo '<div class="alert alert-success" role="alert">
+        <strong>Well done!</strong> You successfully read this important alert message.
+      </div>';
 }
 
 
@@ -128,6 +129,7 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $sex_o
                  placeholder="pseudo"/>
         <h6 class="msg_error"><?php echo $username_msg ?></h6>
           </div>
+          </div>
 
         <div class="form-group">
         <label for="courriel">* Email</label>
@@ -145,7 +147,7 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $sex_o
 </div>
         <div class="form-group">
         <label for="password">* Mot de passe</label>
-          <input type="text" class="form-control" name="password"
+          <input type="password" class="form-control" name="password"
                  value="<?php echo array_key_exists('password', $_POST) ? $_POST['password'] : '' ?>"
                  placeholder="mot de passe"/>
         <h6 class="msg_error"><?php echo $password_msg ?></h6>

@@ -72,15 +72,18 @@ if (array_key_exists('password', $_POST)) {
 
 //Validation ORIENTATION
 $orientation_msg='';
+$orientation_ok=false;
 if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orientation non_selectionee')){
     $orientation_msg='Voullez selectioner votre orientation';
+    $orientation_ok=false;
 }else {
     $orientation_msg='';
+    $orientation_ok=true;
 }
 
 
 //Formulaire est valide
-if ($age_ok && $courriel_ok && $username_ok && $password_ok) {
+if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok && $orientation_ok) {
   // On enregistre les données et s'en vaa sur une autre page
   /* header("Location: index.php");*/
   header("Location: profil.php");

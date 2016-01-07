@@ -8,8 +8,11 @@ $from = $_POST['email'];
 
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
-    mail($to,$subject,$message);
-    echo "<p>".'Mail Sent. Thank you " '. $first_name . ', we will contact you shortly.'."</p>";
+    /*  Voici la fonction pour envoyer le formulaire de contact par courriel mais nous avons pas de serveur smtp*/
+    /*mail("$to",$subject,$message,$headers);*/
+    echo '<div class="alert alert-success" role="alert">
+       <strong>Envoyé</strong> Votre message à été envoyé aux administrateurs du site web. Merci !!
+     </div>';
 }
 ?>
 

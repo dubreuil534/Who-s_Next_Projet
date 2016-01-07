@@ -1,19 +1,37 @@
+<?php if(isset($_POST['submit'])){
+$to = 'dubreuil534@hotmail.com';
+$from = $_POST['email'];
+    $first_name = $_POST['prenom'];
+    $last_name = $_POST['nom'];
+    $subject = "Who's Next";
+    $message = $_POST['commentaires'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message);
+    echo "<p>".'Mail Sent. Thank you " '. $first_name . ', we will contact you shortly.'."</p>";
+}
+?>
+
+
+
+
 <div class="container">
 <h2>Contactez-nous:</h2>
-<form role="form">
+<form role="form" method="post">
     <div class="form-group">
         <label for="prenom">Prénom:</label>
-        <input type="text" class="form-control" id="prenom" placeholder="Entrer votre prénom">
+        <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Entrer votre prénom">
     </div>
 
     <div class="form-group">
         <label for="nom">Nom:</label>
-        <input type="text" class="form-control" id="nom" placeholder="Entrer votre nom">
+        <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrer votre nom">
     </div>
 
     <div class="form-group">
         <label for="courriel">Courriel:</label>
-        <input type="email" class="form-control" id="courriel" placeholder="Entrer un courriel">
+        <input type="email" class="form-control" name="email" id="courriel" placeholder="Entrer un courriel">
     </div>
 
     <div class="form-group">
@@ -33,7 +51,7 @@
 
     <div class="form-group">
         <label for="message">Message:</label>
-        <textarea maxlength="1000" rows="8" class="form-control" id="message" placeholder="Entrez votre message"></textarea>
+        <textarea maxlength="1000" rows="8" class="form-control" id="message" name="commentaires" placeholder="Entrez votre message"></textarea>
     </div>
 
 
@@ -41,7 +59,7 @@
 
 
 
-    <button type="submit" class="btn btn-primary">Soumettre</button>
+    <button type="submit" name="submit" class="btn btn-primary">Soumettre</button>
 </form>
 
 </div>

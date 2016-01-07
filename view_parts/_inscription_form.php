@@ -94,11 +94,13 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 
 if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok == true) {
     $createuser = user_add($username, $courriel, $age, $password);
-    echo 'envoie fait';
+    echo '<div class="alert alert-success" role="alert">
+
+       <strong>Bravo!</strong> l\'inscription a fonctionner vous êtes maintenant un nouveau membre.
+     </div>';
+
 }
-    /*echo '<div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> You successfully read this important alert message.
-      </div>';*/
+
 
 
 
@@ -231,7 +233,7 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok == true) 
           <label><input type="checkbox"> Souvenez-vous de moi</label>
         </div>
 
-        <input type="submit" class="btn btn-primary" name="register" value="Sumettre"/>
+        <input type="submit" class="btn btn-primary" name="register" value="Soumettre"/>
           <!--<input type="submit" class="btn btn-primary">Soumettre</input>-->
 
       </form>

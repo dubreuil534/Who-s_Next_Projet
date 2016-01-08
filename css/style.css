@@ -171,4 +171,50 @@ td {
     height: 100px;
 }
 
+/*PAGE SEARCH*/
+h2{
+    color: grey;}
+
+.search_result {
+    margin-right: 50pt;
+    margin-left: 175pt;
+    padding-bottom: 30pt;
+    padding-top: 20pt;
+    border-bottom: 1px solid lightgrey;
+
+}
+
+.search_image {
+    width: 100px;
+    height: 100px;
+padding: 5pt}
+
+.search_description{
+    display: inline-block;
+position: absolute;
+margin-left: 10pt;
+}
+
+.search_description p{
+    text-align: left;
+    color: black;
+    margin: 5pt;
+    margin-left: 0;
+    padding: 0;
+
+
+}
+.search_username{text-align: left;
+    color: #337ab7 !important;
+font-weight: bold;
+    padding: 0;
+margin-top: 0 !important;}
+
+.search_profil{
+ font-weight: bolder}
+.search_resume{
+    text-align: left;
+    color: black;}
+
+
 

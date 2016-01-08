@@ -5,9 +5,9 @@
             <a href="#" class="list-group-item active">
 Liste
             </a>
-            <a href="#" class="list-group-item">Homme</a>
-            <a href="#" class="list-group-item">Femme</a>
-            <a href="#" class="list-group-item">Tous</a>
+            <a href="hommes.php" class="list-group-item">Homme</a>
+            <a href="femmes.php" class="list-group-item">Femme</a>
+            <a href="tous.php" class="list-group-item">Tous</a>
             <a href="#" id="espace" class="list-group-item"></a>
         </div>
     </div>

@@ -1,9 +1,10 @@
 <?php
 include("Server_Conf.php");
-if(!empty($_SESSION["user"]))
-    $user=$_SESSION["user"];
-else
-    header('Location: alerte.php');
+session_start();
+if(!empty($_SESSION["user"])) {
+    $user = $_SESSION["user"];
+}else{
+    header('Location: alerte.php');}
 
 ?>
 
@@ -12,10 +13,12 @@ require_once  '_defines.php';
 require_once 'data/_main_data.php';
 $site_data[PAGE_ID] = 'Profil';
 require_once 'view_parts/_header.php';
+require_once "view_parts/categorie_gauche.php";
+/**/
 ?>
 <div id="main">
     <div class="container">
-<h1>Votre profil</h1>
+<h2>Votre profil</h2>
 
         <table id="horaire">
 
@@ -71,17 +74,37 @@ require_once 'view_parts/_header.php';
             <p><textarea maxlength="100" rows="3" class="form-control" id="message" placeholder="Entrez votre message"></textarea></p>
         </div>
 
-    <form name="upload" action="download_img.php" method="POST" ENCTYPE="multipart/form-data">
+    <!--<form name="upload" action="download_img.php" method="POST" ENCTYPE="multipart/form-data">
         <div class="profil_title">Choisisez votre photo:</div>
         <p><input type="file" name="userfile"></p>
         <p></p><img data-src="holder.js/200x200" class="img-thumbnail" alt="200x200"
                     src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzIwMHgyMDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTIxNzhjOTdiOSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1MjE3OGM5N2I5Ij48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9Ijc1LjUiIHk9IjEwNC41Ij4yMDB4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
                     data-holder-rendered="true" style="width: 200px; height: 200px;"></p>
 
-    </form>
+    </form>-->
+
+        <form action="_upload.php" method="post" enctype="multipart/form-data">
+            Choisisez votre photo:
+            <input type="file" name="image_files" id="image_files" accept="image/*" />
+            <input type="submit" value="Téléverser" name="upload_submit"/>
+        </form>
 
         <button class="btn btn-primary">OK</button>
         <button class="btn btn-primary">Modifier</button>
+
+        <?php
+        require_once '_upload.php';
+        if ($upload_valid) {
+            echo '<p>Le fichier '. basename( $_FILES["image_files"]["name"]). ' a été téléversé avec succès.</p>';
+            echo '<img src="uploaded_files/' . $_FILES["image_files"]["name"] . '" title="uploaded images" />';
+        } else {
+            echo '<p>Le fichier n\'a pas été téléchargé.</p>';
+            echo "<p>$error_msg</p>";
+            echo '<img width="200px" src="images/grumpy-cat_1_0.jpg" title="uploaded images" />';
+        }
+        ?>
+
+
     </div>
 
 

@@ -1,5 +1,5 @@
 <?php
-require_once  '_defines.php';
+require_once  'db/_defines.php';
 require_once 'data/_main_data.php';
 require_once "db/_user.php";
 
@@ -28,10 +28,9 @@ $courriel_msg = '';
 if (array_key_exists('courriel', $_POST)) {
   $courriel = filter_input(INPUT_POST, 'courriel', FILTER_SANITIZE_EMAIL);
   $courriel = filter_var($courriel, FILTER_VALIDATE_EMAIL);
-
   $courriel_ok = (false !== $courriel);
   if (!$courriel_ok) {
-    $courriel_msg = 'Attention !! Le courriel doit contenir un @ et se terminer pour un herbergeur de courriel valide.';
+    $courriel_msg = 'Attention !! Le courriel doit contenir un @ et se terminer par un herbergeur de courriel valide.';
   }
 
 }
@@ -69,18 +68,17 @@ if (array_key_exists('password', $_POST)) {
 
 }
 //Validation GENRE
-$sex_msg='';
 $sex_ok=false;
-if  (array_key_exists('sex', $_POST) && ($_POST['sex'] =='sex_non_selectionee')){
-    $sex_msg='Voullez selectioner votre genre';
-    $sex_ok=false;
-}else {
-    $sex_msg='';
-    $sex_ok=true;
+$sex_msg='';
+if  (array_key_exists('sex', $_POST)) {
+    $sex_ok =
+    $sex = $_POST['sex'];
+
 }
 
 
 //Validation ORIENTATION
+
 $orientation_msg='';
 $orientation_ok=false;
 if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orientation non_selectionee')){
@@ -89,20 +87,19 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 }else {
     $orientation_msg='';
     $orientation_ok=true;
+    $orientation = $_POST['orientation'];
 }
 
 
-if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok == true) {
-    $createuser = user_add($username, $courriel, $age, $password);
+
+if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok) {
+    $createuser = user_add($username, $courriel, $age, $password, $sex);
     echo '<div class="alert alert-success" role="alert">
 
        <strong>Bravo!</strong> l\'inscription a fonctionner vous êtes maintenant un nouveau membre.
      </div>';
 
 }
-
-
-
 
 
 ?>
@@ -182,16 +179,16 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $age_ok == true) 
                 <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] =='orientation non_selectionee')) ? ' selected="selected"' : '' ?>
                 value="orientation non_selectionee">Non sélectionée</option>
             <option
-                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'bi')) ? ' selected="selected"' : '' ?>
+                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'bisexuelle')) ? ' selected="selected"' : '' ?>
                 value="bi">Bisexuelle</option>
             <option
-                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'hetero')) ? ' selected="selected"' : '' ?>
+                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'heterosexuel')) ? ' selected="selected"' : '' ?>
                 value="hetero">Hétérosexuel</option>
             <option
-                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'homo')) ? ' selected="selected"' : '' ?>
+                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'homosexuel')) ? ' selected="selected"' : '' ?>
                 value="homo">Homosexuel</option>
             <option
-                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'confi')) ? ' selected="selected"' : '' ?>
+                <?php echo (array_key_exists('orientation',$_POST) && ($_POST['orientation'] == 'confidentiel')) ? ' selected="selected"' : '' ?>
                 value="confi">Confidentielle</option>
           </select>
 

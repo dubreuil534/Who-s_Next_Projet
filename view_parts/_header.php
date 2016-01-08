@@ -70,7 +70,7 @@
                     </li>
                         </ul>
                 <?php if(empty($_SESSION["user"])){ ?>
-                    <form class="navbar-form navbar-right" method="post" id="loginForm" action="Connecter.php">
+                    <form class="navbar-form navbar-right" method="post" id="loginForm" action="db/Connecter_dof.php">
                         <div class="form-group">
                             <input type="text" name="email" placeholder="Email"
                                    value="" class="form-control " />

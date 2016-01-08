@@ -1,20 +1,23 @@
-<?php if(! $site_data[USER_IS_LOGGED]) {
-    //Si l'utilisateur n'est pas connecté
-    ?>
-    <form id="login" name="login">
-        <label for="username">Pseudo :</label>
-        <input type="text" name="username" id="username" value="" />
-        <label for="password">Mot de passe :</label>
-        <input type="password" name="password" id="password" />
-        <input type="submit" name="dologin" id="dologin" value="Entrer"/>
+<?php
+// Réception des données du formulaire de login/logout
+$username = null;
+$password = null;
+if(array_key_exists('dologin', $_POST)
+    && array_key_exists('username', $_POST)
+    && array_key_exists('password', $_POST)){
+    require_once ("db/_user.php");
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    if(user_authenticate($username, $password)){
+        do_login($username);
+    }else{} //TODO BLALA
 
-    </form>
+}elseif(array_key_exists('dologout', $_POST)){
+    do_logout(); // On le deconnect
+    header('location' . HOME_PAGE);
+}
 
-<?php } else { //Si l'utilisateur est connecté
- ?>
-<form id="logout" name="logout">
-    <input type="submit" name="dologout" id="dologout" value="Quiter" />
-    </form>
 
-<?php } ?>
+
+?>
 

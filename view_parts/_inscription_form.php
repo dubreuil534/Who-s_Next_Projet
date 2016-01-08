@@ -245,45 +245,6 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok) {
 
 
 
-     <!-- <form role="form">
-        <div class="form-group">
-          <label for="prenom">Prénom:</label>
-          <input type="text" class="form-control" id="prenom" placeholder="Entrer votre prénom">
-        </div>
-        <div class="form-group">
-          <label for="nom">Nom:</label>
-          <input type="text" class="form-control" id="nom" placeholder="Entrer votre nom">
-        </div>
-        <div class="form-group">
-          <label for="sel1">Sex:</label>
-          <select class="form-control" id="sel1">
-            <option>Homme</option>
-            <option>Femme</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="courriel">Courriel:</label>
-          <input type="email" class="form-control" id="courriel" placeholder="Entrer un courriel">
-        </div>
-        <div class="form-group">
-          <label for="pseudonyme">Pseudonyme:</label>
-          <input type="text" class="form-control" id="pseudonyme" placeholder="Entrer un pseudonyme">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Entrer un mot de passe">
-        </div>
-        <div class="form-group">
-          <label for="pwd_confirm">Password Confirmation:</label>
-          <input type="password" class="form-control" id="pwd_confirm" placeholder="Confirmer votre mot de passe">
-        </div>
-        <div class="checkbox">
-          <label><input type="checkbox"> Souvenez-vous de moi</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Soumettre</button>
-      </form>-->
-
-
     </div>
 
 

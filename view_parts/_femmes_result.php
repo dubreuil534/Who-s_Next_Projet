@@ -1,4 +1,4 @@
-<h2>recherche FEMMES - 3 résultats:</h2>
+
 <div class="search_result">
     <img class="search_image" src="images/User2.jpg" alt="User1">
     <div class="search_description">

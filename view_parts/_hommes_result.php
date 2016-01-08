@@ -1,4 +1,4 @@
-<h2>recherche HOMMES - 3 résultats:</h2>
+
 
 
 <div class="search_result">

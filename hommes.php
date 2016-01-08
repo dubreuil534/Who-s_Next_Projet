@@ -5,6 +5,7 @@ require_once 'data/_main_data.php';
 $site_data[PAGE_ID] = 'HOMMES' ;
 require_once 'view_parts/_header.php';
 require_once "view_parts/categorie_gauche.php";
+echo '<h2 class="recherche">recherche HOMMES - 3 résultats:</h2>';
 require_once 'view_parts/_hommes_result.php';
 ?>
 

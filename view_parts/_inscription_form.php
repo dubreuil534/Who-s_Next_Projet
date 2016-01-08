@@ -71,10 +71,14 @@ if (array_key_exists('password', $_POST)) {
 $sex_ok=false;
 $sex_msg='';
 if  (array_key_exists('sex', $_POST)) {
-    $sex_ok =
+    $sex_ok = true;
     $sex = $_POST['sex'];
 
+    if (!$sex_ok){
+        $sex_msg = "Attention !! Aucun genre n'est selectionné";
+    }
 }
+
 
 
 //Validation ORIENTATION
@@ -93,7 +97,7 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 
 
 if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok) {
-    $createuser = user_add($username, $courriel, $age, $password, $sex);
+    $createuser = user_add($username, $courriel, $age, $password,$sex);
     echo '<div class="alert alert-success" role="alert">
 
        <strong>Bravo!</strong> l\'inscription a fonctionner vous êtes maintenant un nouveau membre.

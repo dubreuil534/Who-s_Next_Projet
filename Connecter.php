@@ -18,7 +18,7 @@ session_start();
 		$qt="UPDATE membre SET Statut=1 WHERE Email='".$_POST['email']."';";
 			$stm=$cn->prepare($qt);
 			$stm->execute();
-			header('Location:/tp_dof/');
+			header('Location:/tp_dof/Tchat.php');
 				}else
 				header('Location:alerte.php');
 			

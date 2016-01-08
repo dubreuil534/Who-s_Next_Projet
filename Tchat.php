@@ -31,7 +31,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
         <meta charset="utf-8" />
-        <title>TCHAT | ICI ON TCHATE</title>
+        <title>Chat Priver</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -63,10 +63,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END HEAD -->
 
     <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
-    <audio controls  id="son" style="display: none">
-  <source src="/demo/beep.mp3" type="audio/mp3" />
-  Votre navigateur n'est pas compatible
-</audio>  
+
         <!-- Affiche le header des pages -->
          <input id="imgu" type="hidden" class="<?php echo $user->Photo.'|'.$user->Prenom.' '.$user->Nom; ?>" />
 <header>
@@ -309,9 +306,9 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END CONTAINER -->
         <!-- BEGIN FOOTER -->
-    <?php require_once 'view_parts/_footer.php'; ?></div>
 
-     <!--   <div class="page-footer">
+    <?php require_once 'view_parts/_footer.php'; ?>
+       <!-- <div class="page-footer">
             <div class="page-footer-inner"> 2014 &copy; Metronic by keenthemes.
                 <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
             </div>

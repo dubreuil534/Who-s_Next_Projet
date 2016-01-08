@@ -224,7 +224,17 @@ margin-top: 0 !important;}
  font-weight: bolder}
 .search_resume{
     text-align: left;
-    color: black;}
+    color: black;
+}
 
+.ssslide{
+    height: 500px;
+}
+
+ #commentaire{
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+}
 
 

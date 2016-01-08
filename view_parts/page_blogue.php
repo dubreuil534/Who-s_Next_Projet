@@ -14,7 +14,4 @@ catch(Exception $e)
 $req = $bdd->prepare('INSERT INTO blog (pseudo , commentaire , date_ca) VALUES(?, ?, NOW())');
 $req->execute(array($_POST['pseudo'], $_POST['commentaire']));
 
-// Redirection du visiteur vers la page du chat_basique
-//header('Location: page_blog.php');
-
 ?>

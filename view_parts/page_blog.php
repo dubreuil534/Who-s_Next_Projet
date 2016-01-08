@@ -1,20 +1,6 @@
 <?php
-/*require_once 'page_blogue.php';*/
-$in_post = array_key_exists('soumet', $_POST);
-
-
-$pseudo_ok = false;
-$pseudo_msg = '';
-if (array_key_exists('pseudo', $_POST)) {
-    $pseudo = filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_MAGIC_QUOTES);
-    $pseudo = filter_var($pseudo, FILTER_SANITIZE_STRING);
-
-    $pseudo_ok = (1 === preg_match('/^[A-Za-z0-9]{4,}$/', $pseudo));
-    if(!$pseudo_ok){
-    $pseudo_msg = 'le pseudo doit contenir des lettres ou des chiffres min 4';
-    }
-}
-
+//var_dump($_POST);
+require_once 'page_blogue.php';
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
@@ -24,7 +10,7 @@ if (array_key_exists('pseudo', $_POST)) {
 </head>
 
 <body>
-<div class="container">
+<div class="contener">
 
 
     <h1> BLOG </h1>
@@ -32,24 +18,19 @@ if (array_key_exists('pseudo', $_POST)) {
 
     <form action= "#" method="post">
 
-             <div class="form-group">
+             <p class="form-group">
 
-                 <input type="text" name="pseudo" id= "pseudo" placeholder="pseudo"
-                       class="<?php echo  $in_post && ! $pseudo_ok ? 'error' : ''; ?>"
-            value="<?php echo array_key_exists('pseudo', $_POST) ? $_POST['pseudo'] : '' ?>"/>
-
-                 <h6 class="msg_error" "> <?php echo $pseudo_msg ?> </h6>
-
-             </div>
+                 <input type="text" name="pseudo" id= "pseudo" placeholder="pseudo"/>
+         </p>
 
 
-         <div class="form-group">
+         <p class="form-group">
 
-        <textarea maxlength="1000" rows="8" class="form-control" id="commentaire" name="commentaire" placeholder="Entrez votre commentaire"></textarea>
+        <textarea cols="10" rows="8" class="form-control" id="commentaire" name="commentaire" placeholder="Entrez votre commentaire"></textarea>
 
-         </div>
+         <div/>
 
-            <div class="form-group"><input type="submit" id="soumet" name="soumet" value="Soumettre" /></div>
+            <p class="form-group"><input type="submit" id="soumet" name="soumet" value="Soumettre" /></p>
 
     </form>
 </div>
@@ -65,14 +46,14 @@ catch(Exception $e)
 }
 
 // Récupération des 20 derniers messages
-/*$reponse = $bdd->query('SELECT pseudo, commentaire , DATE_FORMAT(date_ca, \'%d/%m/%Y à %Hh %imin %ssec\') AS date_ca FROM blog ORDER BY ID DESC LIMIT 0, 20');*/
+
 $reponse = $bdd->query('SELECT pseudo, commentaire , DATE_FORMAT(date_ca, \'%d/%m/%Y à %Hh %imin %ssec\') AS date_ca FROM blog ORDER BY ID DESC LIMIT 0, 20');
 
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 
 while ($donnees = $reponse->fetch())
 {
-    echo '<p>'.htmlspecialchars($donnees['pseudo'].' : ') . htmlspecialchars($donnees['commentaire'] .'  affiché le : ') . htmlspecialchars($donnees['date_ca']). '</p>' ;
+    echo '<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ') . htmlspecialchars($donnees['commentaire'] .' le ') . htmlspecialchars($donnees['date_ca']). '</p>' ;
 }
 
 $reponse->closeCursor();

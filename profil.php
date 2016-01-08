@@ -6,15 +6,13 @@ if(!empty($_SESSION["user"])) {
 }else{
     header('Location: alerte.php');}
 
-?>
-
-<?php
 require_once  '_defines.php';
 require_once 'data/_main_data.php';
 $site_data[PAGE_ID] = 'Profil';
 require_once 'view_parts/_header.php';
 require_once "view_parts/categorie_gauche.php";
 
+require_once '_upload.php';
 /**/
 ?>
 <div id="main">
@@ -71,40 +69,39 @@ require_once "view_parts/categorie_gauche.php";
         </table>
 
         <div class="form-group" style="margin-top: 20pt">
+            <form action="#" method="post">
             <label for="resume" class="profil_title">Votre resumé / intérets (~20 mots):</label>
             <p><textarea maxlength="100" rows="3" class="form-control" id="message" placeholder="Entrez votre message"></textarea></p>
+
+                <input type="submit" value="Ajouter resumé" name="resume_submit" class="btn btn-primary"/>
+
+            </form>
         </div>
 
-    <!--<form name="upload" action="download_img.php" method="POST" ENCTYPE="multipart/form-data">
-        <div class="profil_title">Choisisez votre photo:</div>
-        <p><input type="file" name="userfile"></p>
-        <p></p><img data-src="holder.js/200x200" class="img-thumbnail" alt="200x200"
-                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzIwMHgyMDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTIxNzhjOTdiOSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1MjE3OGM5N2I5Ij48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9Ijc1LjUiIHk9IjEwNC41Ij4yMDB4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
-                    data-holder-rendered="true" style="width: 200px; height: 200px;"></p>
 
-    </form>-->
 
         <form action="#" method="post" enctype="multipart/form-data">
-            Choisisez votre photo:
-            <input type="file" name="image_files" id="image_files" accept="image/*" />
-            <input type="submit" value="Téléverser" name="upload_submit"/>
+            <label for="image_files" style="margin-top: 20pt" class="profil_title">Choisisez votre photo:</label>
+            <input type="file" name="image_files" accept="image/*" />
+            <input type="submit" style="margin-top: 10pt" value="Ajouter photo" name="upload_submit" class="btn btn-primary"/>
 
             <?php
-            require_once '_upload.php';
-            if ($upload_valid) {
-                echo '<p>Le fichier '. basename( $_FILES["image_files"]["name"]). ' a été téléversé avec succès.</p>';
-                echo '<img src="uploaded_files/' . $_FILES["image_files"]["name"] . '" title="uploaded images" class="search_image"/>';
-            } else {
-                echo '<p>Le fichier n\'a pas été téléchargé.</p>';
-                echo "<p>$error_msg</p>";
-                echo '<img width="200px" src="images/grumpy-cat_1_0.jpg" title="uploaded images" />';
+            if (array_key_exists('image_files', $_FILES)) { // Ulpoad button has been pressed
+                if ( $upload_ok) {
+                    echo '<p>Le fichier '. basename( $_FILES["image_files"]["name"]). ' a été téléversé avec succès.</p>';
+                    echo '<img src="uploaded_files/' . $_FILES["image_files"]["name"] . '" title="uploaded images" />';
+                } else {
+                    echo '<p>Le fichier n\'a pas été téléchargé.</p>';
+                    echo "<p>$upload_msg</p>";
+                }
             }
             ?>
 
         </form>
-
-        <button class="btn btn-primary">OK</button>
-        <button class="btn btn-primary">Modifier</button>
+<div style="margin-top: 50pt">
+        <button class="btn btn-primary" style="margin-right: 100pt"><a href="index.php" style="color: white"/>Sauvegarder</button>
+        <button class="btn btn-primary"><a href="inscription.php" style="color: white"/>Modifier</button>
+</div>
 
 
     </div>

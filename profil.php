@@ -14,6 +14,7 @@ require_once 'data/_main_data.php';
 $site_data[PAGE_ID] = 'Profil';
 require_once 'view_parts/_header.php';
 require_once "view_parts/categorie_gauche.php";
+
 /**/
 ?>
 <div id="main">
@@ -83,26 +84,27 @@ require_once "view_parts/categorie_gauche.php";
 
     </form>-->
 
-        <form action="_upload.php" method="post" enctype="multipart/form-data">
+        <form action="#" method="post" enctype="multipart/form-data">
             Choisisez votre photo:
             <input type="file" name="image_files" id="image_files" accept="image/*" />
             <input type="submit" value="Téléverser" name="upload_submit"/>
+
+            <?php
+            require_once '_upload.php';
+            if ($upload_valid) {
+                echo '<p>Le fichier '. basename( $_FILES["image_files"]["name"]). ' a été téléversé avec succès.</p>';
+                echo '<img src="uploaded_files/' . $_FILES["image_files"]["name"] . '" title="uploaded images" class="search_image"/>';
+            } else {
+                echo '<p>Le fichier n\'a pas été téléchargé.</p>';
+                echo "<p>$error_msg</p>";
+                echo '<img width="200px" src="images/grumpy-cat_1_0.jpg" title="uploaded images" />';
+            }
+            ?>
+
         </form>
 
         <button class="btn btn-primary">OK</button>
         <button class="btn btn-primary">Modifier</button>
-
-        <?php
-        require_once '_upload.php';
-        if ($upload_valid) {
-            echo '<p>Le fichier '. basename( $_FILES["image_files"]["name"]). ' a été téléversé avec succès.</p>';
-            echo '<img src="uploaded_files/' . $_FILES["image_files"]["name"] . '" title="uploaded images" />';
-        } else {
-            echo '<p>Le fichier n\'a pas été téléchargé.</p>';
-            echo "<p>$error_msg</p>";
-            echo '<img width="200px" src="images/grumpy-cat_1_0.jpg" title="uploaded images" />';
-        }
-        ?>
 
 
     </div>

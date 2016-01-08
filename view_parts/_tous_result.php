@@ -1,4 +1,4 @@
-<h2>recherche TOUS - 6 résultats:</h2>
+
 
 <div class="search_result">
     <img class="search_image" src="images/User1.jpg" alt="User1">

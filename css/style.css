@@ -133,10 +133,7 @@ form.form-search:before {
 #categories_droite{
     float: right;
 }
-img {
-    width: 50px;
-    height: 600px;
-}
+
 .titre{
     display: block;
     text-align: center;
@@ -184,10 +181,23 @@ h2{
 
 }
 
+.recherche {
+    margin-left: 175pt;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    padding: 5pt
+}
+
+
 .search_image {
     width: 100px;
     height: 100px;
 padding: 5pt}
+
+
 
 .search_description{
     display: inline-block;

@@ -69,6 +69,26 @@
                         </ul>
                     </li>
                         </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
                 <?php if(empty($_SESSION["user"])){ ?>
                     <form class="navbar-form navbar-right" method="post" id="loginForm" action="Connecter.php">
                         <div class="form-group">

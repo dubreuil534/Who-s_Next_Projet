@@ -9,17 +9,17 @@ $in_post = array_key_exists('register', $_POST);
 //Validation PSEUDO
 $username_ok = false;
 $username_msg = '';
+
 if (array_key_exists('username', $_POST)) {
-  $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_MAGIC_QUOTES);
-  $username = filter_var($username, FILTER_SANITIZE_STRING);
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_MAGIC_QUOTES);
+    $username = filter_var($username, FILTER_SANITIZE_STRING);
 
-  $username_ok = (1 === preg_match('/^[A-Za-z0-9]{2,}$/', $username));
+    $username_ok = (1 === preg_match('/^[A-Za-z0-9]{2,}$/', $username));
 
-  if (!$username_ok) {
-    $username_msg = 'Attention !! Le nom ne doit contenir que des caractères alphabétiques et numériques (min 4)';
-  }
+    if (!$username_ok) {
+        $username_msg = 'Attention !! Le nom ne doit contenir que des caractères alphabétiques et numériques (min 4)';
+    }
 }
-
 
 
 //Validation EMAIL

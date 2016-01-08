@@ -231,5 +231,10 @@ margin-top: 0 !important;}
     height: 500px;
 }
 
+ #commentaire{
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+}
 
 

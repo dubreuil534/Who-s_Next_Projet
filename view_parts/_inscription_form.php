@@ -87,16 +87,33 @@ $orientation_msg='';
 if  (array_key_exists('orientation', $_POST)) {
     $orientation_ok = true;
     $orientation = $_POST['orientation'];
-    var_dump($_POST{$orientation});
 if (!$orientation_ok){
     $orientation_msg='Veuillez selectioner votre orientation';
 
 }
 }
+//validation Region
+if  (array_key_exists('region', $_POST)) {
+    $region = $_POST['region'];
+}
+
+//validation but
+if  (array_key_exists('buts', $_POST)) {
+    $buts = $_POST['buts'];
+}
+
+
+
+
+
+//validation Description
+if  (array_key_exists('description', $_POST)) {
+    $description = $_POST['description'];
+}
 
 
 if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok && $orientation_ok) {
-    $createuser = user_add($username, $courriel, $age, $password,$sex,$orientation);
+    $createuser = user_add($username, $courriel, $age, $password,$sex,$orientation,$region,$buts, $description);
     echo '<div class="alert alert-success" role="alert">
 
        <strong>Bravo!</strong> l\'inscription a fonctionner vous êtes maintenant un nouveau membre.
@@ -226,7 +243,7 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok && $orien
 
         <div class="form-group">
         <label for="resume">Votre resumé / intérets (~20 mots):</label>
-        <p><textarea maxlength="100" rows="3" class="form-control" id="message" placeholder="Entrez votre message"></textarea></p>
+        <p><textarea name="description" maxlength="100" rows="3" class="form-control" id="message" placeholder="Entrez votre message"></textarea></p>
           </div>
 
         <div class="checkbox">

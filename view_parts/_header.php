@@ -60,12 +60,12 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profil <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <img class="navbar-brand" src="images/Logo_projet.gif" alt="Mountain View" style="width:50px;height:50px;">
-                            <li><a href="profil.php">Modifier le profil</a></li>
-                            <li><a href="#">Preference</a></li>
-                            <li><a href="#">Option général</a></li>
+                            <li><a href="profil.php"> Modifier le profil </a></li>
+                            <li><a href="#"> reference </a></li>
+                            <li><a href="#"> Option général </a></li>
                             <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Sous menu</li>
-                            <li><a href="#">Sedéconnecter</a></li>
+                            <li class="dropdown-header"> Sous menu </li>
+                            <li><a href="#"> Deconnexion </a></li>
                         </ul>
                     </li>
                         </ul>

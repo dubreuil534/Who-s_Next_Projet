@@ -1,7 +1,7 @@
 <?php
 //var_dump($_POST);
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    require_once 'page_blogue.php';
+    require_once 'page_blog_post.php';
 }
 
 ?>
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <div class="contener">
 
 
-    <h1> BLOG </h1>
+    <h1 id="titre"> BLOG </h1>
 
 
     <form action= "#" method="post">
@@ -56,7 +56,8 @@ $reponse = $bdd->query('SELECT pseudo, commentaire , DATE_FORMAT(date_ca, \'%d/%
 
 while ($donnees = $reponse->fetch())
 {
-    echo '<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ') . htmlspecialchars($donnees['commentaire'] .' le ') . htmlspecialchars($donnees['date_ca']). '</p>' ;
+    echo '<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ').htmlspecialchars($donnees['commentaire']). '</p>';
+    echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;
 }
 
 $reponse->closeCursor();

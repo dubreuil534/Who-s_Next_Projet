@@ -8,7 +8,5 @@ require_once 'view_parts/_header.php';
 
    <?php require_once 'view_parts/page_blog.php'; ?>
 
-  <?php /*require_once 'view_parts/page_blogue.php'; */?>
-
     <?php require_once 'view_parts/_footer.php'; ?>
 </div>

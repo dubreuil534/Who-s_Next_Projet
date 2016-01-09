@@ -1,9 +1,9 @@
 <?php
+
 //var_dump($_POST);
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     require_once 'page_blog_post.php';
 }
-
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">

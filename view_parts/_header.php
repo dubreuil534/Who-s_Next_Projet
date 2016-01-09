@@ -41,7 +41,7 @@
                 <a class="navbar-brand" href="index.php">Who's Next</a>
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
-                    <li><a href="Tchat.php">Chat Priver</a></li>
+                    <li><a href="Tchat.php">Chat</a></li>
                     <li><a href="Blog.php">Blog</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>

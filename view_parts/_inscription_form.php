@@ -82,22 +82,21 @@ if  (array_key_exists('sex', $_POST)) {
 
 
 //Validation ORIENTATION
-
-$orientation_msg='';
 $orientation_ok=false;
-if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orientation non_selectionee')){
-    $orientation_msg='Veuillez selectioner votre orientation';
-    $orientation_ok=false;
-}else {
-    $orientation_msg='';
-    $orientation_ok=true;
+$orientation_msg='';
+if  (array_key_exists('orientation', $_POST)) {
+    $orientation_ok = true;
     $orientation = $_POST['orientation'];
+    var_dump($_POST{$orientation});
+if (!$orientation_ok){
+    $orientation_msg='Veuillez selectioner votre orientation';
+
+}
 }
 
 
-
-if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok) {
-    $createuser = user_add($username, $courriel, $age, $password,$sex);
+if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok && $orientation_ok) {
+    $createuser = user_add($username, $courriel, $age, $password,$sex,$orientation);
     echo '<div class="alert alert-success" role="alert">
 
        <strong>Bravo!</strong> l\'inscription a fonctionner vous êtes maintenant un nouveau membre.

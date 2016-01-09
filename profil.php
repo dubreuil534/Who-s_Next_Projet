@@ -12,7 +12,7 @@ $site_data[PAGE_ID] = 'Profil';
 require_once 'view_parts/_header.php';
 require_once "view_parts/categorie_gauche.php";
 
-require_once '_upload.php';
+require_once 'view_parts/_upload.php';
 /**/
 ?>
 <div id="main">

@@ -34,6 +34,7 @@ define('USER_TB_COL_EMAIL', 'email');
 define('USER_TB_COL_AGE', 'age');
 define('USER_TB_COL_PASSWORD_HASH', 'password');
 define('USER_TB_COL_SEX', 'sex');
+define('USER_TB_COL_ORIENTATION', 'orientation');
 $user_tb_cols = array(
     USER_TB_COL_ID,
     USER_TB_COL_USERNAME,
@@ -41,6 +42,7 @@ $user_tb_cols = array(
     USER_TB_COL_AGE,
     USER_TB_COL_PASSWORD_HASH,
     USER_TB_COL_SEX,
+    USER_TB_COL_ORIENTATION,
 
 
 );
@@ -164,7 +166,7 @@ function username_exists($username) {
  * @param $email : email utilisateur
  * @return array|bool : Un array contgenant les deux id d'insertion (user et usercnx) en cas de succès, false en cas d'échec
  */
-function user_add($username, $email, $age ,$password, $sex) {
+function user_add($username, $email, $age ,$password, $sex, $orientation) {
     global $pdo, $user_tb_cols;
     $resultat = false; // Mode défensif
     $queryStr = 'INSERT INTO ' . PHPAT_DB_TB_USER . '(' . get_tb_cols($user_tb_cols) . ') VALUES (' . get_tb_cols($user_tb_cols, COLON_CAR) . ')';
@@ -176,6 +178,7 @@ function user_add($username, $email, $age ,$password, $sex) {
         COLON_CAR . USER_TB_COL_AGE => $age,
         COLON_CAR . USER_TB_COL_PASSWORD_HASH => $password_hash,
         COLON_CAR . USER_TB_COL_SEX => $sex,
+        COLON_CAR . USER_TB_COL_ORIENTATION => $orientation,
 
     );
     $res = $sth->execute($params);

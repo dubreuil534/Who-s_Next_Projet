@@ -1,7 +1,10 @@
 <?php
-   /*session_start();*/
-   if(!empty($_SESSION["user"]))
-    $user=$_SESSION["user"];
+
+   if(!empty($_SESSION["user"])) {
+       $user = $_SESSION["user"];
+   }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +57,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="Deconnecter.php"><?php echo !empty($_SESSION["user"])?"Deconnexion":"";?></a></li>
-                    <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenu":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->Prenom." ".$user->Nom:"";?></strong></a></li>
+                    <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenu":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->username:"";?></strong></a></li>
                     <li><a href="inscription.php">S'inscrire</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profil <span class="caret"></span></a>
@@ -70,27 +73,8 @@
                     </li>
                         </ul>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </ul>
                 <?php if(empty($_SESSION["user"])){ ?>
-                    <form class="navbar-form navbar-right" method="post" id="loginForm" action="db/Connecter_dof.php">
+                    <form class="navbar-form navbar-right" method="post" id="loginForm" action="Connecter.php">
                         <div class="form-group">
                             <input type="text" name="email" placeholder="Email"
                                    value="" class="form-control " />

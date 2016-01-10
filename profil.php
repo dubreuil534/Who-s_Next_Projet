@@ -89,7 +89,7 @@ require_once 'view_parts/_upload.php';
             if (array_key_exists('image_files', $_FILES)) { // Ulpoad button has been pressed
                 if ( $upload_ok) {
                     echo '<p>Le fichier '. basename( $_FILES["image_files"]["name"]). ' a été téléversé avec succès.</p>';
-                    echo '<img src="uploaded_files/' . $_FILES["image_files"]["name"] . '" title="uploaded images" />';
+                    echo '<img src="images/' . $_FILES["image_files"]["name"] . '" title="uploaded images" />';
                 } else {
                     echo '<p>Le fichier n\'a pas été téléchargé.</p>';
                     echo "<p>$upload_msg</p>";

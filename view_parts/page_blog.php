@@ -62,8 +62,10 @@ $imageprofil = !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";
 while ($donnees = $reponse->fetch())
 
 {
+    //Envoi de l'image du profil qui a envooyer un commentaire.
 
-    echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;
+    /*echo <img src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>" alt='Logo_compagnie' style='width:120px;height:120px;'>*/
+   echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;
     echo '<div class="well">'.'<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ').htmlspecialchars($donnees['commentaire']). '</p>'.'</div>';
 
 }

@@ -19,50 +19,52 @@ require_once 'view_parts/_upload.php';
     <div class="container">
 <h2>Votre profil</h2>
 
+        <img src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>" alt="Smiley face" height="42" width="42">
+
         <table id="horaire">
 
                         <tr>
 
                 <td class="profil_title"><strong>Votre pseudo:</strong></td>
-                <td class="profil_content">Olgaaaaaaa</td>
+                <td class="profil_content"><?php  echo !empty($_SESSION["user"])?$user->username:"";?></td>
 
             </tr>
             <tr>
 
                 <td class="profil_title"><strong>Votre courriel:</strong></td>
-                <td class="profil_content">olga@olga.com</td>
+                <td class="profil_content"><?php  echo !empty($_SESSION["user"])?$user->email:"";?></td>
 
             </tr>
             <tr>
 
                 <td class="profil_title"><strong>Votre age:</strong></td>
-                <td class="profil_content">33</td>
+                <td class="profil_content"><?php  echo !empty($_SESSION["user"])?$user->age:"";?></td>
 
             </tr>
             <tr>
 
                 <td class="profil_title"><strong>Votre genre:</strong></td>
-                <td class="profil_select">femme</td>
+                <td class="profil_select"><?php  echo !empty($_SESSION["user"])?$user->sex:"";?></td>
 
             </tr>
             <tr>
 
                 <td class="profil_title"><strong>Votre orientation:   </strong></td>
-                <td class="profil_select">hétérosexuelle</td>
+                <td class="profil_select"><?php  echo !empty($_SESSION["user"])?$user->username:"";?></td>
 
             </tr>
 
             <tr>
 
                 <td class="profil_title"><strong>Votre region:</strong></td>
-                <td class="profil_select">non selectionée</td>
+                <td class="profil_select"><?php  echo !empty($_SESSION["user"])?$user->region:"";?></td>
 
             </tr>
 
             <tr>
 
                 <td class="profil_title"><strong>Votre but:</strong></td>
-                <td class="profil_select">non selectionée</td>
+                <td class="profil_select"><?php  echo !empty($_SESSION["user"])?$user->buts:"";?></td>
 
             </tr>
 
@@ -71,9 +73,11 @@ require_once 'view_parts/_upload.php';
         <div class="form-group" style="margin-top: 20pt">
             <form action="#" method="post">
             <label for="resume" class="profil_title">Votre resumé / intérets (~20 mots):</label>
-            <p><textarea maxlength="100" rows="3" class="form-control" id="message" placeholder="Entrez votre message"></textarea></p>
+            <p><textarea maxlength="100" rows="3" class="form-control" id="message" placeholder="Entrez votre message"><?php  echo !empty($_SESSION["user"])?$user->description:"";?></textarea></p>
 
                 <input type="submit" value="Ajouter resumé" name="resume_submit" class="btn btn-primary"/>
+               <?php ?>
+
 
             </form>
         </div>
@@ -99,8 +103,8 @@ require_once 'view_parts/_upload.php';
 
         </form>
 <div style="margin-top: 50pt">
-        <button class="btn btn-primary" style="margin-right: 100pt"><a href="index.php" style="color: white"/>Sauvegarder</button>
-        <button class="btn btn-primary"><a href="inscription.php" style="color: white"/>Modifier</button>
+       <!-- <button class="btn btn-primary" style="margin-right: 100pt"><a href="index.php" style="color: white"/>Sauvegarder</button>
+        <button class="btn btn-primary"><a href="inscription.php" style="color: white"/>Modifier</button>-->
 </div>
 
 

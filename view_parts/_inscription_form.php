@@ -102,10 +102,6 @@ if  (array_key_exists('buts', $_POST)) {
     $buts = $_POST['buts'];
 }
 
-
-
-
-
 //validation Description
 if  (array_key_exists('description', $_POST)) {
     $description = $_POST['description'];

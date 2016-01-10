@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once  '_defines.php';
 require_once 'data/_main_data.php';
 $site_data[PAGE_ID] = 'Blog';

@@ -1,6 +1,7 @@
 <?php
 include("Server_Conf.php");
 
+
 session_start();
 		try{
 			$cn=new PDO("mysql:host=".HOST_NAME.";dbname=".DATABASE_NAME,USER_NAME,PASSEWORD);
@@ -22,6 +23,7 @@ session_start();
 							header('Location:index.php');
 						else
 							header('Location:alerte.php');
+
 
 				}
 

@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
              <p class="form-group">
 
-                 <input type="text" name="pseudo" id= "pseudo" placeholder="<?php echo !empty($_SESSION["user"])?$user->username:"";?>"/>
+                 <input type="text" name="pseudo" id= "pseudo" placeholder="" value="<?php echo !empty($_SESSION["user"])?$user->username:"";?>"/>
          </p>
 
 
@@ -57,14 +57,13 @@ $reponse = $bdd->query('SELECT pseudo, commentaire , DATE_FORMAT(date_ca, \'%d/%
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 
 
-$imageprofil = !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";
 
 while ($donnees = $reponse->fetch())
 
 {
     //Envoi de l'image du profil qui a envooyer un commentaire.
 
-    /*echo <img src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>" alt='Logo_compagnie' style='width:120px;height:120px;'>*/
+    echo '<img  src="images/'.!empty($_SESSION["user"])?$user->photo:"Logo_projet.gif".'" alt="Logo_compagnie" style="width:120px;height:120px;"/>';
    echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;
     echo '<div class="well">'.'<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ').htmlspecialchars($donnees['commentaire']). '</p>'.'</div>';
 

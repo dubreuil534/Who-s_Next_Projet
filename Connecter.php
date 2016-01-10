@@ -6,7 +6,7 @@ session_start();
 		try{
 			$cn=new PDO("mysql:host=".HOST_NAME.";dbname=".DATABASE_NAME,USER_NAME,PASSEWORD);
 			$cn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$qt="SELECT username,email,age,password,sex,orientation,region,buts,description,statut FROM user WHERE email=?";
+		$qt="SELECT username,email,age,password,sex,orientation,region,buts,description,statut,photo FROM user WHERE email=?";
 		$stmt=$cn->prepare($qt);
 		$stmt->bindValue(1, $_POST['email']);		
 		//$stmt->bindValue(2, passwd_encrypt($_POST['pass']));

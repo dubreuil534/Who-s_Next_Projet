@@ -9,7 +9,7 @@ session_start();
 		$qt="SELECT username,email,age,password,sex,orientation,region,buts,description,statut FROM user WHERE email=? AND password=?";
 		$stmt=$cn->prepare($qt);
 		$stmt->bindValue(1, $_POST['email']);		
-		$stmt->bindValue(2, md5($_POST['pass']));
+		$stmt->bindValue(2, $_POST['pass']);
 		
 				if($stmt->execute()){
 						$ligne=$stmt->fetch(PDO::FETCH_OBJ);

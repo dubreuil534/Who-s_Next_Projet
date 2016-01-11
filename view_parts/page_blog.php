@@ -11,7 +11,7 @@ if (array_key_exists("commentaire", $_POST)) {
         $msg_ok = true;
     }
     If (! $msg_ok){ // le prénom n'est pas valide.
-        $msg_msg = " Attention!! (Min 10 caractères et minuscule seulement).";
+        $msg_msg = " Attention!! (Min 1 caractères).";
     }
 }
 

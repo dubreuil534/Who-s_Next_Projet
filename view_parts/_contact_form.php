@@ -58,6 +58,8 @@ if (array_key_exists('courriel', $_POST)) {
     }
 }
 
+
+//Validation MESSAGE
 $msg_ok = false;
 $msg_msg = ""; //Message de feedback validation. affichier sinon vide
 if (array_key_exists("commentaires", $_POST)) {
@@ -65,13 +67,29 @@ if (array_key_exists("commentaires", $_POST)) {
     if (strlen($_POST["commentaires"])>=10) {
         $msg_ok = true;
     }
-    If (! $msg_ok){ // le prénom n'est pas valide.
-        $msg_msg = " Attention!! (Min 1 caractères).";
+    If (! $msg_ok){ // le message n'est pas valide.
+        $msg_msg = " Attention!! (Min 10 caractères).";
     }
 }
 
 
-if ($prenom_ok && $nom_ok && $courriel_ok && $msg_ok) {
+//Validation SUJET
+
+$sujet_msg='';
+$sujet_ok=false;
+if  (array_key_exists('sujet', $_POST) && ($_POST['sujet'] =='sujet_non_selectionee')){
+    $sujet_msg='Voullez selectioner le sujet';
+    $sujet_ok=false;
+}else {
+    $sujet_msg='';
+    $sujet_ok=true;
+}
+
+
+
+
+
+if ($prenom_ok && $nom_ok && $courriel_ok && $sujet_ok && $msg_ok) {
     echo '<div class="alert alert-success" role="alert">
 
        <strong>Bravo!</strong> Votre message à été envoyé.
@@ -104,24 +122,28 @@ if ($prenom_ok && $nom_ok && $courriel_ok && $msg_ok) {
 <form role="form" method="post">
     <div class="form-group">
         <label for="prenom">Prénom:</label>
-        <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Entrer votre prénom">
-        <?php echo array_key_exists('prenom', $_POST) ? $_POST['prenom'] : '' ?>
+        <input type="text" class="form-control" name="prenom" id="prenom"
+               value="<?php echo array_key_exists('prenom', $_POST) ? $_POST['prenom'] : '' ?>"
+               placeholder="Entrer votre prénom">
+
         <h6 class="msg_error"><?php echo $prenom_msg ?></h6>
     </div>
 
     <div class="form-group">
         <label for="nom">Nom:</label>
-        <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrer votre nom">
-        <?php echo array_key_exists('nom', $_POST) ? $_POST['nom'] : '' ?>
+        <input type="text" class="form-control" name="nom" id="nom"
+               value="<?php echo array_key_exists('nom', $_POST) ? $_POST['nom'] : '' ?>"
+               placeholder="Entrer votre nom">
+
 
         <h6 class="msg_error"><?php echo $nom_msg ?></h6>
     </div>
 
     <div class="form-group">
         <label for="courriel">Courriel:</label>
-        <input type="email" class="form-control" name="courriel" id="courriel" placeholder="Entrer un courriel">
-        <?php echo array_key_exists('courriel', $_POST) ? $_POST['courriel'] : '' ?>
-
+        <input type="email" class="form-control" name="courriel" id="courriel"
+               value="<?php echo array_key_exists('courriel', $_POST) ? $_POST['courriel'] : '' ?>"
+               placeholder="Entrer un courriel">
         <h6 class="msg_error"><?php echo $courriel_msg ?></h6>
     </div>
 
@@ -129,8 +151,8 @@ if ($prenom_ok && $nom_ok && $courriel_ok && $msg_ok) {
         <label for="sel1">Choisisez le sujet de votre demande:</label>
         <select class="form-control" id="sel1" name="sujet">
             <option
-                <?php echo (array_key_exists('sujet',$_POST) && ($_POST['sujet'] =='Sujet non selectionée')) ? ' selected="selected"' : '' ?>
-                value="Sujet non selectionée" >Sujet non selectionée</option>
+                <?php echo (array_key_exists('sujet',$_POST) && ($_POST['sujet'] =='sujet_non_selectionee')) ? ' selected="selected"' : '' ?>
+                value="sujet_non_selectionee" >Sujet non selectionée</option>
             <option
                 <?php echo (array_key_exists('sujet',$_POST) && ($_POST['sujet'] =='Probleme de connexion')) ? ' selected="selected"' : '' ?>
                 value="Probleme de connexion">Probleme de connexion</option>
@@ -153,21 +175,25 @@ if ($prenom_ok && $nom_ok && $courriel_ok && $msg_ok) {
             <option
                 <?php echo (array_key_exists('sujet',$_POST) && ($_POST['sujet'] =='Commentaires & suggestions')) ? ' selected="selected"' : '' ?>
                 value="Commentaires & suggestions">Commentaires & suggestions</option>
-
         </select>
+
+        <h6 class="msg_error"><?php echo $sujet_msg ?></h6>
     </div>
 
     <div class="form-group">
         <label for="message">Message:</label>
-        <textarea maxlength="1000" rows="8" class="form-control" id="message" name="commentaires" placeholder="Entrez votre message"></textarea>
+        <h6 class="msg_error"><?php echo $msg_msg ?></h6>
+        <textarea maxlength="1000" rows="8" class="form-control" id="message"
+        <?php echo array_key_exists('commentaires', $_POST) ? $_POST['commentaires'] : '' ?>
+                  name="commentaires" placeholder="Entrez votre message"></textarea>
     </div>
 
 
 
 
 
+    <input type="submit" class="btn btn-primary" name="submit" value="Soumettre"/>
 
-    <button type="submit" name="submit" class="btn btn-primary">Soumettre</button>
 </form>
 
 </div>

@@ -67,31 +67,30 @@ if (array_key_exists('password', $_POST)) {
 
 
 }
-//Validation GENRE
-$sex_ok=false;
+///Validation GENRE
 $sex_msg='';
-if  (array_key_exists('sex', $_POST)) {
-    $sex_ok = true;
-    $sex = $_POST['sex'];
-
-    if (!$sex_ok){
-        $sex_msg = "Attention !! Aucun genre n'est selectionné";
-    }
+$sex_ok=false;
+if  (array_key_exists('sex', $_POST) && ($_POST['sex'] =='sex_non_selectionee')){
+    $sex_msg='Voullez selectioner votre genre';
+    $sex_ok=false;
+}else {
+    $sex_msg='';
+    $sex_ok=true;
 }
 
 
 
 //Validation ORIENTATION
-$orientation_ok=false;
 $orientation_msg='';
-if  (array_key_exists('orientation', $_POST)) {
-    $orientation_ok = true;
-    $orientation = $_POST['orientation'];
-if (!$orientation_ok){
+$orientation_ok=false;
+if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orientation non_selectionee')){
     $orientation_msg='Veuillez selectioner votre orientation';
+    $orientation_ok=false;
+}else {
+    $orientation_msg='';
+    $orientation_ok=true;
+}
 
-}
-}
 //validation Region
 if  (array_key_exists('region', $_POST)) {
     $region = $_POST['region'];

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <div class="contener">
 
 
-    <h1 id="titre"> BLOG </h1>
+    <h1 id="titre1"> BLOG </h1>
 
 
     <form action= "#" method="post">

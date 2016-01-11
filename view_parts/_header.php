@@ -60,7 +60,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profil <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <img id="profil_pic_dropdown" src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>" alt='Photo profil' style='width:120px;height:120px;'>
+                            <img id="profil_pic_dropdown" src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>.jpg" alt='Photo profil' style='width:120px;height:120px;'>
                             <li><a href="profil.php"> Modifier le profil </a></li>
                             <li><a href="#"> reference </a></li>
                             <li><a href="#"> Option général </a></li>

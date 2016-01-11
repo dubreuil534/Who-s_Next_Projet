@@ -19,7 +19,7 @@ require_once 'view_parts/_upload.php';
     <div class="container">
 <h2>Votre profil</h2>
 
-        <img src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>" alt="Smiley face" height="42" width="42">
+        <img src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>.jpg" alt="Smiley face" height="42" width="42">
 
         <table id="horaire">
 

@@ -1,7 +1,9 @@
 <?php
-   /*session_start();*/
-   if(!empty($_SESSION["user"]))
-    $user=$_SESSION["user"];
+
+   if(!empty($_SESSION["user"])) {
+       $user = $_SESSION["user"];
+   }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,44 +55,25 @@
                 <!-- Formulaire de  Login -->
 
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenue":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->username:"";?></strong></a></li>
+                    <li><a href="inscription.php"><?php echo empty($_SESSION["user"])?"S'inscrire":"";?></a></li>
                     <li><a href="Deconnecter.php"><?php echo !empty($_SESSION["user"])?"Deconnexion":"";?></a></li>
-                    <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenu":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->Prenom." ".$user->Nom:"";?></strong></a></li>
-                    <li><a href="inscription.php">S'inscrire</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profil <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <img class="navbar-brand" src="images/Logo_projet.gif" alt="Mountain View" style="width:50px;height:50px;">
+                            <img id="profil_pic_dropdown" src="images/<?php  echo !empty($_SESSION["user"])?$user->username:"Logo_projet.gif";?>" alt='Photo profil' style='width:120px;height:120px;'>
                             <li><a href="profil.php"> Modifier le profil </a></li>
                             <li><a href="#"> reference </a></li>
                             <li><a href="#"> Option général </a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header"> Sous menu </li>
-                            <li><a href="#"> Deconnexion </a></li>
+                            <li><a href="<?php echo empty($_SESSION["user"])?"alerte.php":"Deconnecter.php";?>"> Déconnexion </a></li>
                         </ul>
                     </li>
                         </ul>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </ul>
                 <?php if(empty($_SESSION["user"])){ ?>
-                    <form class="navbar-form navbar-right" method="post" id="loginForm" action="db/Connecter_dof.php">
+                    <form class="navbar-form navbar-right" method="post" id="loginForm" action="Connecter.php">
                         <div class="form-group">
                             <input type="text" name="email" placeholder="Email"
                                    value="" class="form-control " />

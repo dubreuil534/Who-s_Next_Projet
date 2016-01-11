@@ -2,5 +2,5 @@
 	define( 'HOST_NAME' , "localhost" );
 	define( 'USER_NAME' , "root");
 	define( 'PASSEWORD' , "");
-	define( 'DATABASE_NAME' , "monchat");
+	define( 'DATABASE_NAME' , "tp_dof");
 ?>

@@ -236,8 +236,11 @@ margin-top: 0 !important;}
     width: 30%;
     height: 30%;
 }
- #titre{
+ /*#titre{
      color: tomato;
- }
+ }*/
+#profil_pic_dropdown{
+    margin-left: 18px;
+}
 
 

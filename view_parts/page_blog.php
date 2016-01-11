@@ -4,6 +4,8 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     require_once 'page_blog_post.php';
 }
+
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
@@ -23,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
              <p class="form-group">
 
-                 <input type="text" name="pseudo" id= "pseudo" placeholder="pseudo"/>
+                 <input type="text" name="pseudo" id= "pseudo" placeholder="" value="<?php echo !empty($_SESSION["user"])?$user->username:"";?>"/>
          </p>
 
 
@@ -31,12 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         <textarea cols="10" rows="8" class="form-control" id="commentaire" name="commentaire" placeholder="Entrez votre commentaire"></textarea>
 
-         <div/>
 
             <p class="form-group"><input type="submit" id="soumet" name="soumet" value="Soumettre" /></p>
 
     </form>
-</div>
+</div >
+
 <?php
 // Connexion à la base de données
 try
@@ -54,10 +56,17 @@ $reponse = $bdd->query('SELECT pseudo, commentaire , DATE_FORMAT(date_ca, \'%d/%
 
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 
+
+
 while ($donnees = $reponse->fetch())
+
 {
-    echo '<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ').htmlspecialchars($donnees['commentaire']). '</p>';
-    echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;
+    //Envoi de l'image du profil qui a envooyer un commentaire.
+
+    echo '<img  src="images/'.(!empty($_SESSION["user"])?$user->username:"Logo_projet.gif").'" alt="Logo_compagnie" style="width:120px;height:120px;"/>';
+   echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;
+    echo '<div class="well">'.'<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ').htmlspecialchars($donnees['commentaire']). '</p>'.'</div>';
+
 }
 
 $reponse->closeCursor();

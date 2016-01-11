@@ -6,8 +6,12 @@ if ( ! $upload_ok) {
 };
 
 if ($upload_ok) {
-    $target_dir = "uploaded_files/";
-    $target_file = $target_dir . basename($_FILES["image_files"]["name"]);
+    $filename = $_FILES["image_files"]["name"];
+    $extension = explode(".",$filename);
+    $ext= $extension[count($extension)-1 ];
+    $user = $_SESSION['user'];
+    $target_dir = "images/";
+    $target_file = $target_dir . basename($user->username.'.'.$ext);
 
 }
 
@@ -54,7 +58,14 @@ if ($upload_ok) {
     if (!move_uploaded_file($_FILES["image_files"]["tmp_name"], $target_file)) {
         $upload_ok = false;
     }
+
+   $cn=new PDO("mysql:host=".HOST_NAME.";dbname=".DATABASE_NAME,USER_NAME,PASSEWORD);
+    $qt="UPDATE user SET photo = '".$user->username.".".$ext."' WHERE username='".$user->username."';";
+    $stm=$cn->prepare($qt);
+    $stm->execute();
+
 }
+
 
 ?>
 

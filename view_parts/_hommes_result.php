@@ -1,3 +1,39 @@
+<?php
+// Connexion à la base de données
+try
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=tp_dof;charset=utf8', 'root', '');
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
+
+// Insertion du message à l'aide d'une requête préparée
+
+$req = $bdd->prepare('SELECT username,age,sex,orientation,region,decription,photo FROM user');
+
+// execution du message
+$req->execute(array($_POST['pseudo'], $_POST['commentaire']));
+
+// Connexion à la base de données
+try
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=tp_dof;charset=utf8', 'root', '');
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
+
+while($data = mysql_fetch_assoc($req))
+{
+    // on affiche les informations de l'enregistrement en cours
+    echo '<b>'.$data['nom'].' '.$data['prenom'].'</b> ('.$data['statut'].')';
+    echo ' <i>date de naissance : '.$data['date'].'</i><br>';
+}
+
+?>
 
 
 

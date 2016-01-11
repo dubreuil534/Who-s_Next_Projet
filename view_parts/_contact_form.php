@@ -68,14 +68,13 @@ if (array_key_exists("commentaires", $_POST)) {
     If (! $msg_ok){ // le prénom n'est pas valide.
         $msg_msg = " Attention!! (Min 1 caractères).";
     }
-    var_dump($msg_ok);
 }
 
 
 if ($prenom_ok && $nom_ok && $courriel_ok && $msg_ok) {
     echo '<div class="alert alert-success" role="alert">
 
-       <strong>Bravo!</strong> l\'inscription a fonctionner vous êtes maintenant un nouveau membre.
+       <strong>Bravo!</strong> Votre message à été envoyé.
      </div>';
 
 }

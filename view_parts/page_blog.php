@@ -63,7 +63,7 @@ while ($donnees = $reponse->fetch())
 {
     //Envoi de l'image du profil qui a envooyer un commentaire.
 
-    echo '<img  src="images/'.!empty($_SESSION["user"])?$user->photo:"Logo_projet.gif".'" alt="Logo_compagnie" style="width:120px;height:120px;"/>';
+    echo '<img  src="images/'.(!empty($_SESSION["user"])?$user->username:"Logo_projet.gif").'" alt="Logo_compagnie" style="width:120px;height:120px;"/>';
    echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;
     echo '<div class="well">'.'<p>'.htmlspecialchars($donnees['pseudo'].' a commenté : ').htmlspecialchars($donnees['commentaire']). '</p>'.'</div>';
 

@@ -1,39 +1,26 @@
 <?php
 
-
-$in_post = array_key_exists('soumet', $_POST);
-
-$msg_ok = false;
-$msg_msg = ""; //Message de feedback validation. affichier sinon vide
-if (array_key_exists("commentaire", $_POST)) {
-    $mgs = filter_input(INPUT_POST, "commentaire",FILTER_SANITIZE_STRING);
-    if (strlen($_POST["commentaire"])>=1) {
-        $msg_ok = true;
-    }
-    If (! $msg_ok){ // le prénom n'est pas valide.
-        $msg_msg = " Attention!! (Min 1 caractères).";
-    }
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    require_once 'page_chat_post.php';
 }
 
-
-
-
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8" />
-    <title> BLOG </title>
+    <title> CHAT </title>
 </head>
 
 <body>
 <div class="contener">
 
 
-    <h1 id="titre"> BLOG </h1>
+    <h1 id="titre">CHAT</h1>
 
 
-    <form action= "#" method="post">
+    <form action= "" method="post">
 
              <p class="form-group">
 
@@ -45,7 +32,7 @@ if (array_key_exists("commentaire", $_POST)) {
 
         <textarea cols="10" rows="8" class="form-control" id="commentaire" name="commentaire" placeholder="Entrez votre commentaire"></textarea>
              <br>
-             <span class="<?php echo $in_post && ! $msg_ok ? 'msg_error' : '';?>"> <?php echo $msg_msg;?></span>
+            <!-- <span class="<?php /*echo $in_post && ! $msg_ok ? 'msg_error' : '';*/?>"> <?php /*echo $msg_msg;*/?></span>-->
 
 
             <p class="form-group"><input type="submit" id="soumet" name="soumet" value="Soumettre" /></p>
@@ -67,15 +54,15 @@ catch(Exception $e)
 // Récupération des 20 derniers messages
 
 $reponse = $bdd->query('SELECT pseudo, commentaire , DATE_FORMAT(date_ca, \'%d/%m/%Y à %Hh %imin %ssec\') AS date_ca FROM blog ORDER BY ID DESC LIMIT 0, 20');
-
+//var_dump($reponse);
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 
 
 
-while ($donnees = $reponse->fetch())
+while ($donnees = $reponse->fetch()) {
 
-{
-    //Envoi de l'image du profil qui a envooyer un commentaire.
+    //var_dump($donnees);
+    //Envoi de l'image du profil qui a envoyer un commentaire.
 
     echo '<img  src="images/' .htmlspecialchars($donnees['pseudo']). '" alt="Logo_compagnie" style="width:120px;height:120px;"/>';
    echo '<p>' .' le ' . htmlspecialchars($donnees['date_ca']). '</p>' ;

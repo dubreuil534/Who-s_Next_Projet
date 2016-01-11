@@ -1,10 +1,22 @@
 <?php
 
-//var_dump($_POST);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    require_once 'page_blog_post.php';
+$in_post = array_key_exists('soumet', $_POST);
+
+$msg_ok = false;
+$msg_msg = ""; //Message de feedback validation. affichier sinon vide
+if (array_key_exists("commentaire", $_POST)) {
+    $mgs = filter_input(INPUT_POST, "commentaire",FILTER_SANITIZE_STRING);
+    if (strlen($_POST["commentaire"])>=1) {
+        $msg_ok = true;
+    }
+    If (! $msg_ok){ // le prénom n'est pas valide.
+        $msg_msg = " Attention!! (Min 10 caractères et minuscule seulement).";
+    }
 }
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -32,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
          <p class="form-group">
 
         <textarea cols="10" rows="8" class="form-control" id="commentaire" name="commentaire" placeholder="Entrez votre commentaire"></textarea>
+             <br>
+             <span class="<?php echo $in_post && ! $msg_ok ? 'msg_error' : '';?>"> <?php echo $msg_msg;?></span>
 
 
             <p class="form-group"><input type="submit" id="soumet" name="soumet" value="Soumettre" /></p>

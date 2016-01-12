@@ -68,7 +68,7 @@ if (array_key_exists('password', $_POST)) {
 
 
 }
-///Validation GENRE
+//Validation GENRE
 $sex_msg='';
 $sex_ok=false;
 if  (array_key_exists('sex', $_POST) && ($_POST['sex'] =='sex_non_selectionee')){

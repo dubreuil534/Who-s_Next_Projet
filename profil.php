@@ -50,7 +50,7 @@ require_once 'view_parts/_upload.php';
             <tr>
 
                 <td class="profil_title"><strong>Votre orientation:   </strong></td>
-                <td class="profil_select"><?php  echo !empty($_SESSION["user"])?$user->username:"";?></td>
+                <td class="profil_select"><?php  echo !empty($_SESSION["user"])?$user->orientation:"";?></td>
 
             </tr>
 

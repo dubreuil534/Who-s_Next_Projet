@@ -1,4 +1,5 @@
 <?php
+
 require_once  'db/_defines.php';
 require_once 'data/_main_data.php';
 require_once "db/_user.php";
@@ -76,6 +77,7 @@ if  (array_key_exists('sex', $_POST) && ($_POST['sex'] =='sex_non_selectionee'))
 }else {
     $sex_msg='';
     $sex_ok=true;
+    $sex = $_POST['sex'];
 }
 
 
@@ -89,6 +91,7 @@ if  (array_key_exists('orientation', $_POST) && ($_POST['orientation'] =='orient
 }else {
     $orientation_msg='';
     $orientation_ok=true;
+    $orientation = $_POST['orientation'];
 }
 
 //validation Region
@@ -115,7 +118,6 @@ if ($age_ok && $courriel_ok && $username_ok && $password_ok && $sex_ok && $orien
      </div>';
 
 }
-
 
 ?>
   <div id="main">

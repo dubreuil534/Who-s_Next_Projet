@@ -10,7 +10,6 @@ require_once "view_parts/categorie_gauche.php";
 
 <?php
 
-
 ?>
 <?php require_once 'view_parts/_inscription_form.php'; ?>
 <?php require_once 'view_parts/_footer.php'; ?></div>

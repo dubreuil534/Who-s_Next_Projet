@@ -1,6 +1,7 @@
 <?php
 
-   if(!empty($_SESSION["user"])) {
+
+if(!empty($_SESSION["user"])) {
        $user = $_SESSION["user"];
    }
 
@@ -9,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> <?= $site_data[PAGE_ID] ?> </title>
+    <title> Bienvenue à Who\'s Next </title>
     <!-- Latest compiled and minified CSS -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -54,7 +55,7 @@
                 <!-- Formulaire de  Login -->
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="Tchat.php"><?php echo !empty($_SESSION["user"])?"Bienvenue":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->username:"";?></strong></a></li>
+                    <li><a href="index.php"><?php echo !empty($_SESSION["user"])?"Bienvenue":"";?>  <strong style="font-style:italic"><?php echo !empty($_SESSION["user"])?$user->username:"";?></strong></a></li>
                     <li><a href="inscription.php"><?php echo empty($_SESSION["user"])?"S'inscrire":"";?></a></li>
                     <li><a href="Deconnecter.php"><?php echo !empty($_SESSION["user"])?"Deconnexion":"";?></a></li>
                     <li class="dropdown">

@@ -1,7 +1,7 @@
 <?php
 /*  Voici la fonction pour envoyer le formulaire de contact par courriel mais nous avons pas de serveur smtp*/
 /*mail("$to",$subject,$message,$headers);*/
-if(isset($_POST['submit'])) {
+/*if(isset($_POST['submit'])) {
     $to = 'dubreuil534@hotmail.com';
     $from = $_POST['courriel'];
     $first_name = $_POST['prenom'];
@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
     $headers2 = "From:" . $to;
 
     $in_post = array_key_exists('submit', $_POST);
-}
+}*/
 
 //Validation Prenom
     $prenom_ok = false;
